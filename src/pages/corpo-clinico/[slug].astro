@@ -13,7 +13,7 @@ const { m } = Astro.props as { m: (typeof equipe)[number] };
 const exs = m.exames.map(exame).filter(Boolean) as Rec[];
 const esp = especialidade(m.especialidade);
 const msg = `Olá, quero agendar com ${m.nome} na EmCORR.`;
-const ld = [{ '@context': 'https://schema.org', '@type': m.registro.startsWith('CRO') ? 'Dentist' : 'Physician', name: m.nomeCompleto, identifier: [m.registro, m.rqe].filter(Boolean), worksFor: { '@id': 'https://emcorr.com.br/#clinica' }, image: new URL(m.foto, Astro.site).toString() }];
+const ld = [{ '@context': 'https://schema.org', '@type': m.registro.startsWith('CRO') ? 'Dentist' : m.registro.startsWith('CRM') ? 'Physician' : 'Person', jobTitle: m.funcao.split(' · ')[0], name: m.nomeCompleto, identifier: [m.registro, m.rqe].filter(Boolean), worksFor: { '@id': 'https://emcorr.com.br/#clinica' }, image: new URL(m.foto, Astro.site).toString() }];
 const temVideo = m.slug === 'dra-ludmilla-nery';
 ---
 <Base title={`${m.nome}, ${m.funcao.split(' · ')[0].toLowerCase()} em Corrente-PI | EmCORR`} description={`${m.funcao.split(' · ')[0]} · ${m.registro}${m.rqe ? ` · ${m.rqe}` : ''}. Atende na EmCORR, em Corrente-PI. Agende pelo WhatsApp.`} nav="Corpo clínico" waMsg={msg} jsonld={ld}>
