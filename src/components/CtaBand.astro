@@ -1,0 +1,13 @@
+---
+interface Props { titulo: string; texto: string; botao: string; href: string }
+const { titulo, texto, botao, href } = Astro.props;
+---
+<section class="wrap" style="padding-bottom:88px">
+  <div class="band cta-band">
+    <div class="stack gap-12" style="max-width:760px">
+      <h2 style="font-size:34px;line-height:1.2">{titulo}</h2>
+      <p style="font-size:17px;line-height:1.6">{texto}</p>
+    </div>
+    <a class="btn btn-w" href={href} data-evento="click_whatsapp">{botao}</a>
+  </div>
+</section>

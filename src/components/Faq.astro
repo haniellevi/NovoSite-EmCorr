@@ -1,0 +1,8 @@
+---
+// FAQ com <details> nativo + schema FAQPage (gerado pela página que usa).
+interface Props { items: { p: string; r: string }[]; onWhite?: boolean }
+const { items, onWhite = false } = Astro.props;
+---
+<div class:list={['faq', { 'on-white': onWhite }]}>
+  {items.map((f) => <details><summary>{f.p}</summary><p>{f.r}</p></details>)}
+</div>

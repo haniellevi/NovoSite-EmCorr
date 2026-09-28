@@ -1,0 +1,162 @@
+---
+import '../styles/global.css';
+import Icon from '../components/Icon.astro';
+import { site, wa, enderecoCompleto } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  nav?: string;
+  waMsg?: string;
+  image?: string;
+  jsonld?: object[];
+}
+const { title, description, nav = '', waMsg, image = '/img/aerea-full.jpg', jsonld = [] } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+// Enquanto o site novo roda na URL de teste, não indexa (evita competir com o site atual).
+const indexar = import.meta.env.PUBLIC_INDEXAR === 'true';
+const waLink = wa(waMsg);
+const menu = [
+  ['Especialidades', '/especialidades'], ['Exames', '/exames'], ['Corpo clínico', '/corpo-clinico'],
+  ['Convênios', '/convenios'], ['Sobre', '/sobre'], ['Blog', '/blog'],
+];
+const clinic = {
+  '@context': 'https://schema.org',
+  '@type': ['MedicalClinic', 'Dentist'],
+  '@id': 'https://emcorr.com.br/#clinica',
+  name: site.nome,
+  url: 'https://emcorr.com.br',
+  logo: 'https://emcorr.com.br/img/logo.png',
+  image: 'https://emcorr.com.br/img/aerea-full.jpg',
+  telephone: '+55 89 99933-1133',
+  email: site.email,
+  foundingDate: String(site.fundacao),
+  address: { '@type': 'PostalAddress', streetAddress: site.endereco.rua, addressLocality: site.endereco.cidade, addressRegion: site.endereco.uf, postalCode: site.endereco.cep, addressCountry: 'BR' },
+  areaServed: ['Corrente', 'Sul do Piauí'],
+  medicalSpecialty: ['Cardiovascular', 'Pediatric', 'Endocrine', 'Otolaryngologic', 'Psychiatric', 'Neurologic', 'Dentistry'],
+  paymentAccepted: 'Convênios Medplan, Humana Saúde e Camed; particular',
+  sameAs: [site.instagram, site.facebook],
+};
+---
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {!indexar && <meta name="robots" content="noindex, nofollow" />}
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="EmCORR – Centro Clínico" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(image, Astro.site).toString()} />
+  <meta name="theme-color" content="#C0090E" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin />
+  <script type="application/ld+json" set:html={JSON.stringify(clinic)} />
+  {jsonld.map((j) => <script type="application/ld+json" set:html={JSON.stringify(j)} />)}
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <div class="util">
+    <span>{site.horario ? `Hoje: ${site.horario.semana} · ` : ''}{enderecoCompleto}</span>
+    <span class="row gap-24"><a href={`tel:+${site.telefone}`}>{site.telefoneExibicao}</a><a href="/sobre#acessibilidade">Acessibilidade</a></span>
+  </div>
+  <header class="header">
+    <a class="logo" href="/" aria-label="EmCORR – Centro Clínico, página inicial"><img src="/img/logo.png" alt="EmCORR Centro Clínico" width="157" height="58" /></a>
+    <nav class="nav" aria-label="Menu principal">
+      {menu.map(([label, href]) => <a href={href} aria-current={nav === label ? 'page' : undefined}>{label}</a>)}
+    </nav>
+    <div class="header-ctas">
+      <a class="btn btn-s btn-sm" href="/resultados">Ver meu resultado</a>
+      <a class="btn btn-p btn-sm" href={waLink} data-evento="click_whatsapp"><Icon name="chat" size={18} stroke={2} />Agendar pelo WhatsApp</a>
+      <button class="btn btn-s btn-sm menu-btn" type="button" aria-expanded="false" aria-controls="menu-mobile" data-menu-open>Menu</button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="menu-mobile" data-open="false" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="row" style="justify-content:space-between">
+      <img src="/img/logo.png" alt="EmCORR" width="157" height="58" style="height:34px;width:auto" />
+      <button class="btn btn-s btn-sm" type="button" data-menu-close>Fechar menu</button>
+    </div>
+    <a class="btn btn-p" href={waLink}>Agendar pelo WhatsApp</a>
+    <a class="btn btn-s" href="/resultados">Ver meu resultado</a>
+    <nav aria-label="Menu principal">
+      {menu.map(([label, href]) => <a href={href}>{label}</a>)}
+      <a href="/agendar">Agendar</a>
+    </nav>
+    <p class="small muted">{enderecoCompleto} · <a href={`tel:+${site.whatsapp}`}>Ligar: {site.whatsappExibicao}</a></p>
+  </div>
+
+  <main id="conteudo">
+    <slot />
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="stack gap-12">
+        <span class="logo-chip"><img src="/img/logo.png" alt="EmCORR" width="157" height="58" style="height:36px;width:auto" /></span>
+        <strong style="font-size:19px">Cuidando de você e de quem você ama.</strong>
+        <span>Consulta, dentista e exame no centro de Corrente, desde {site.fundacao}.</span>
+      </div>
+      <div class="stack gap-8">
+        <strong>Atendimento</strong>
+        <span>{site.endereco.rua}, {site.endereco.bairro}<br />{site.endereco.cidade}-{site.endereco.uf}, {site.endereco.cep}</span>
+        <a href={site.mapsUrl} target="_blank" rel="noopener">Como chegar</a>
+        <span><a href={wa()}>WhatsApp {site.whatsappExibicao}</a><br /><a href={`tel:+${site.telefone}`}>Telefone {site.telefoneExibicao}</a></span>
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+        {site.horario && <span>{site.horario.semana}{site.horario.sabado ? ` · ${site.horario.sabado}` : ''}</span>}
+      </div>
+      <div class="stack gap-8">
+        <strong>Navegação</strong>
+        <a href="/especialidades">Especialidades</a><a href="/exames">Exames</a><a href="/corpo-clinico">Corpo clínico</a><a href="/convenios">Convênios</a><a href="/resultados">Resultados de exames</a><a href="/agendar">Agendar</a>
+      </div>
+      <div class="stack gap-8">
+        <strong>A clínica</strong>
+        <a href="/sobre">Sobre</a><a href="/blog">Blog</a><a href={site.instagram} target="_blank" rel="noopener">Instagram</a><a href={site.facebook} target="_blank" rel="noopener">Facebook</a><a href="/privacidade">Política de privacidade</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      {site.nome} · CNPJ {site.cnpj} · Responsável técnica: {site.rt.nome} · {site.rt.registro} · {site.rt.rqe}<br />
+      Em caso de emergência, ligue 192 (SAMU) ou vá ao pronto-socorro mais próximo. As informações deste site são educativas e não substituem a consulta.<br />
+      © {new Date().getFullYear()} EmCORR
+    </div>
+  </footer>
+
+  <a class="wa-fab" href={waLink} aria-label="Agendar pelo WhatsApp (abre o WhatsApp)" data-evento="click_whatsapp"><Icon name="chat" size={28} stroke={2} /></a>
+  <div class="mobile-bar">
+    <a class="btn btn-p" href={waLink} data-evento="click_whatsapp">Agendar pelo WhatsApp</a>
+    <a class="btn btn-s" href={`tel:+${site.whatsapp}`}>Ligar</a>
+  </div>
+
+  <script>
+    const menu = document.getElementById('menu-mobile');
+    const openBtn = document.querySelector<HTMLButtonElement>('[data-menu-open]');
+    const set = (open: boolean) => {
+      menu?.setAttribute('data-open', String(open));
+      openBtn?.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open) menu?.querySelector<HTMLElement>('a')?.focus(); else openBtn?.focus();
+    };
+    openBtn?.addEventListener('click', () => set(true));
+    document.querySelector('[data-menu-close]')?.addEventListener('click', () => set(false));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu?.dataset.open === 'true') set(false); });
+    // Botões de pausa (vídeo e carrossel) — WCAG 2.2.2
+    document.querySelectorAll<HTMLButtonElement>('[data-pause]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.pause!);
+        if (!target) return;
+        let paused: boolean;
+        if (target instanceof HTMLVideoElement) { if (target.paused) { target.play(); paused = false; } else { target.pause(); paused = true; } }
+        else { paused = target.classList.toggle('paused'); }
+        btn.setAttribute('aria-label', (paused ? 'Retomar ' : 'Pausar ') + (btn.dataset.label ?? ''));
+        btn.setAttribute('aria-pressed', String(paused));
+      });
+    });
+  </script>
+</body>
+</html>

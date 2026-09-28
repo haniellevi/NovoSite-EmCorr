@@ -1,0 +1,79 @@
+[
+ {
+  "tipo_registro": "exam_category",
+  "slug": "imagem",
+  "nome": "Imagem",
+  "ordem": 1,
+  "descricao": "Tomografia, raio-X, ultrassom e mamografia, e também os exames de imagem que o dentista pede. Mostram o que está dentro do corpo, sem corte. Você faz aqui em Corrente, sem viajar.",
+  "exames": [
+   "tomografia-computadorizada",
+   "tomografia-odontologica",
+   "raio-x",
+   "raio-x-panoramico",
+   "mamografia",
+   "ultrassonografia",
+   "ultrassom-morfologico"
+  ]
+ },
+ {
+  "tipo_registro": "exam_category",
+  "slug": "coracao-e-circulacao",
+  "nome": "Coração e circulação",
+  "ordem": 2,
+  "descricao": "Exames do ritmo e da força do coração, da pressão ao longo do dia e da circulação no pescoço. O eletrocardiograma leva poucos minutos. O Holter e o MAPA ficam com você por 24 horas, em casa.",
+  "exames": [
+   "eletrocardiograma",
+   "ecocardiograma",
+   "holter-24-horas",
+   "mapa-24-horas",
+   "doppler-de-carotidas"
+  ]
+ },
+ {
+  "tipo_registro": "exam_category",
+  "slug": "ouvido-nariz-e-garganta",
+  "nome": "Ouvido, nariz e garganta",
+  "ordem": 3,
+  "descricao": "Testes de audição e exames com uma câmera fina que mostra o nariz, a garganta e as cordas vocais. São pedidos para perda de audição, otite, nariz entupido, ronco e rouquidão, em crianças e adultos.",
+  "exames": [
+   "audiometria",
+   "imitanciometria",
+   "nasofibroscopia",
+   "laringoscopia"
+  ]
+ },
+ {
+  "tipo_registro": "exam_category",
+  "slug": "pulmao",
+  "nome": "Pulmão",
+  "ordem": 4,
+  "descricao": "A espirometria, o \"exame do sopro\", mede quanto ar você solta e com que força. Serve para acompanhar asma, bronquite e falta de ar.",
+  "exames": [
+   "espirometria"
+  ]
+ },
+ {
+  "tipo_registro": "exam_category",
+  "slug": "recem-nascido",
+  "nome": "Recém-nascido",
+  "ordem": 5,
+  "descricao": "Teste do pezinho, da orelhinha e da linguinha: as primeiras triagens do bebê, ou seja, exames simples feitos em todos os recém-nascidos. São rápidos e ajudam a família a começar cedo o acompanhamento, se for preciso.",
+  "exames": [
+   "teste-do-pezinho",
+   "teste-da-orelhinha",
+   "teste-da-linguinha"
+  ]
+ },
+ {
+  "tipo_registro": "exam_category",
+  "slug": "laboratorio",
+  "nome": "Laboratório",
+  "ordem": 6,
+  "descricao": "Coleta de sangue, urina e outras amostras para check-up e acompanhamento de tratamento, e também o exame toxicológico. O resultado sai no portal do laboratório, pela internet.",
+  "exames": [
+   "exames-laboratoriais",
+   "exame-toxicologico",
+   "teste-de-covid-19"
+  ]
+ }
+]

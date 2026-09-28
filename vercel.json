@@ -1,0 +1,32 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/sobre-nos", "destination": "/sobre", "permanent": true },
+    { "source": "/sobre-nos/", "destination": "/sobre", "permanent": true },
+    { "source": "/fale-conosco/:rest*", "destination": "/sobre", "permanent": true },
+    { "source": "/_especialidades", "destination": "/especialidades", "permanent": true },
+    { "source": "/_especialidades/2996-2/:rest*", "destination": "/especialidades/fonoaudiologia", "permanent": true },
+    { "source": "/_especialidades/cardiologia-clinica/:rest*", "destination": "/especialidades/cardiologia", "permanent": true },
+    { "source": "/_especialidades/otorrino-laringologia/:rest*", "destination": "/especialidades/otorrinolaringologia", "permanent": true },
+    { "source": "/_especialidades/mamografia/:rest*", "destination": "/exames/mamografia", "permanent": true },
+    { "source": "/_especialidades/:slug/:rest*", "destination": "/especialidades/:slug", "permanent": true },
+    { "source": "/_exames", "destination": "/exames", "permanent": true },
+    { "source": "/_exames/eletrocardiograma-ecg/:rest*", "destination": "/exames/eletrocardiograma", "permanent": true },
+    { "source": "/_exames/ecocardiografia/:rest*", "destination": "/exames/ecocardiograma", "permanent": true },
+    { "source": "/_exames/ecodoppler-de-carotidas/:rest*", "destination": "/exames/doppler-de-carotidas", "permanent": true },
+    { "source": "/_exames/mapa-monitorizacao-ambulatorial-da-pressao-arterial/:rest*", "destination": "/exames/mapa-24-horas", "permanent": true },
+    { "source": "/_exames/raio-x-panoramica/:rest*", "destination": "/exames/raio-x-panoramico", "permanent": true },
+    { "source": "/_exames/tomografia-ortodontica/:rest*", "destination": "/exames/tomografia-odontologica", "permanent": true },
+    { "source": "/_exames/nasofibrolaringoscopia/:rest*", "destination": "/exames/nasofibroscopia", "permanent": true },
+    { "source": "/_exames/teste-de-covid-19/:rest*", "destination": "/exames/exames-laboratoriais", "permanent": true },
+    { "source": "/exames/nasofibrolaringoscopia", "destination": "/exames/nasofibroscopia", "permanent": true },
+    { "source": "/exames/teste-de-covid-19", "destination": "/exames/exames-laboratoriais", "permanent": true },
+    { "source": "/_exames/:slug/:rest*", "destination": "/exames/:slug", "permanent": true },
+    { "source": "/_corpo-clinico", "destination": "/corpo-clinico", "permanent": true },
+    { "source": "/_corpo-clinico/dra-ludmila-nery/:rest*", "destination": "/corpo-clinico/dra-ludmilla-nery", "permanent": true },
+    { "source": "/_corpo-clinico/dr-igor-rafael/:rest*", "destination": "/corpo-clinico/dr-igor-rafael", "permanent": true },
+    { "source": "/_corpo-clinico/:rest*", "destination": "/corpo-clinico", "permanent": true },
+    { "source": "/author/:rest*", "destination": "/", "permanent": true }
+  ]
+}

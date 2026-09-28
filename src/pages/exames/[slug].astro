@@ -1,0 +1,88 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import Crumbs from '../../components/Crumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import Faq from '../../components/Faq.astro';
+import { examesAtivos, categoriasExame, especialidade, lista, val, type Rec } from '../../lib';
+import { site, wa } from '../../data/site';
+
+export function getStaticPaths() {
+  return examesAtivos.map((x) => ({ params: { slug: x.slug }, props: { x } }));
+}
+const { x } = Astro.props as { x: Rec };
+const cat = categoriasExame.find((c) => c.slug === x.categoria);
+const preparo = lista(x.preparo);
+const quando = lista(x.quando_e_pedido);
+const duracao = val(x.duracao);
+const prazo = val(x.prazo_resultado);
+const portal = site.portais[x.portal_resultado as keyof typeof site.portais];
+const faqs = (x.faqs ?? []) as { p: string; r: string }[];
+const rel = examesAtivos.filter((o) => o.categoria === x.categoria && o.slug !== x.slug).slice(0, 4);
+const esps = lista(x.especialidades_relacionadas).map(especialidade).filter(Boolean) as Rec[];
+const msg = val(x.whatsapp_mensagem) || `Olá, quero agendar ${x.nome.toLowerCase()} na EmCORR.`;
+const msgPreparo = `Olá, vou fazer ${x.nome.toLowerCase()} na EmCORR. Podem me mandar o preparo?`;
+const quemRealiza = typeof x.quem_realiza === 'object' ? x.quem_realiza?.descricao : x.quem_realiza;
+const fotos: Record<string, string> = { 'tomografia-computadorizada': '/img/tomografo.jpg', 'tomografia-odontologica': '/img/tomografia-3d.jpg', ecocardiograma: '/img/ecografia.jpg', ultrassonografia: '/img/ultrassom-medico.jpg', 'ultrassom-morfologico': '/img/ultrassom-medico.jpg', 'exames-laboratoriais': '/img/laboratorio.jpg', 'exame-toxicologico': '/img/microscopio.jpg', 'teste-do-pezinho': '/img/equipe-lab.jpg', 'raio-x-panoramico': '/img/dentista.jpg' };
+const foto = fotos[x.slug] ?? ({ imagem: '/img/tomografo.jpg', 'coracao-e-circulacao': '/img/ecografia.jpg', laboratorio: '/img/laboratorio.jpg', 'recem-nascido': '/img/equipe-lab.jpg' } as Record<string, string>)[x.categoria] ?? '/img/corredor.jpg';
+const ld = [
+  { '@context': 'https://schema.org', '@type': 'MedicalWebPage', name: x.h1, about: { '@type': 'MedicalTest', name: x.nome, description: x.resumo }, provider: { '@id': 'https://emcorr.com.br/#clinica' } },
+  ...(faqs.length ? [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.p, acceptedAnswer: { '@type': 'Answer', text: f.r } })) }] : []),
+];
+---
+<Base title={x.seo_title} description={x.seo_description} nav="Exames" waMsg={msg} jsonld={ld}>
+  <Crumbs items={[['Início', '/'], ['Exames', '/exames'], ...(cat ? [[cat.nome, '/exames'] as [string, string]] : []), [x.nome]]} />
+  <section class="wrap split" style="grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);padding-top:32px;padding-bottom:72px">
+    <div class="stack gap-20">
+      <span class="eyebrow">{cat ? cat.nome : 'Exame'}</span>
+      <h1 class="h1" style="font-size:52px">{x.h1}</h1>
+      <p class="lead" style="font-size:20px">{x.subtitulo}</p>
+      <div class="row gap-8" style="flex-wrap:wrap">
+        {duracao && <span class="chip bg-cream" style="border:0"><strong style="font-weight:600;margin-right:6px">Duração:</strong>{String(duracao).split('.')[0]}</span>}
+        {prazo && <span class="chip bg-cream" style="border:0"><strong style="font-weight:600;margin-right:6px">Resultado:</strong>{prazo}</span>}
+        {x.precisa_pedido_medico === true && <span class="chip bg-cream" style="border:0"><strong style="font-weight:600;margin-right:6px">Pedido médico:</strong>obrigatório</span>}
+        <span class="chip chip-on">Medplan · Humana · Camed · Particular</span>
+      </div>
+      <div class="row gap-16" style="flex-wrap:wrap">
+        <a class="btn btn-p" href={wa(msg)} data-evento="click_whatsapp">{x.cta_texto || 'Agendar pelo WhatsApp'}</a>
+        {preparo.length > 0 && <a class="btn btn-s" href={wa(msgPreparo)}>Receber o preparo no WhatsApp</a>}
+      </div>
+      {x.precisa_pedido_medico === true && <p class="small muted">Tem o pedido médico? Mande uma foto na conversa. A recepção confirma o preparo e o horário.</p>}
+    </div>
+    <img class="photo" src={foto} alt={`${x.nome} na EmCORR`} width="830" height="560" style="height:460px" />
+  </section>
+
+  <section class="wrap split" style="grid-template-columns:240px minmax(0,1fr);gap:64px;align-items:start;padding-bottom:80px">
+    <nav aria-label="Nesta página" class="stack gap-12 hide-mobile" style="position:sticky;top:110px;border-left:2px solid var(--sand-200);padding-left:20px;font-size:15px">
+      <strong style="color:var(--ink-900);font-size:14px">Nesta página</strong>
+      <a href="#o-que-e">O que é</a>{quando.length > 0 && <a href="#quando">Quando é pedido</a>}{preparo.length > 0 && <a href="#preparo">Preparo</a>}{x.como_funciona && <a href="#como">Como funciona</a>}<a href="#resultado">Resultado</a>{faqs.length > 0 && <a href="#faq">Perguntas frequentes</a>}
+    </nav>
+    <div class="stack gap-48" style="max-width:780px">
+      <div id="o-que-e" class="stack gap-16"><h2 class="h3" style="font-size:30px">O que é</h2><p class="prose">{x.o_que_e}</p>{x.para_que_serve && <p class="prose">{x.para_que_serve}</p>}</div>
+      {quando.length > 0 && <div id="quando" class="stack gap-16"><h2 class="h3" style="font-size:30px">Quando o médico pede</h2><ul class="checks">{quando.map((q) => <li><Icon name="check" />{q}</li>)}</ul></div>}
+      {preparo.length > 0 && (
+        <div id="preparo" class="bg-cream stack gap-20" style="border-radius:28px;padding:40px">
+          <div class="row gap-16" style="justify-content:space-between;flex-wrap:wrap"><h2 class="h3" style="font-size:30px">Preparo</h2><a class="btn btn-p btn-sm" href={wa(msgPreparo)}>Receber no WhatsApp</a></div>
+          <ul class="checks">{preparo.map((p) => <li><Icon name="check" />{p}</li>)}</ul>
+          <p class="small muted">A recepção confirma o preparo do seu exame no agendamento.</p>
+        </div>
+      )}
+      {x.como_funciona && <div id="como" class="stack gap-16"><h2 class="h3" style="font-size:30px">Como funciona</h2><p class="prose">{x.como_funciona}</p>{duracao && <p class="prose"><strong style="color:var(--ink-900)">Duração:</strong> {duracao}</p>}{quemRealiza && <p class="prose small muted">{quemRealiza}</p>}</div>}
+      <div id="resultado" class="box split" style="grid-template-columns:auto minmax(0,1fr) auto;gap:24px">
+        <span class="ic"><Icon name="file" /></span>
+        <span><strong class="h3" style="font-size:20px">Onde ver o resultado</strong><br /><span style="font-size:16px">{x.onde_ver_resultado ?? 'A recepção informa onde o resultado fica disponível.'}</span></span>
+        {portal && <a class="btn btn-s btn-sm" href="/resultados">Ver meu resultado</a>}
+      </div>
+      {faqs.length > 0 && <div id="faq" class="stack gap-12"><h2 class="h3" style="font-size:30px">Perguntas frequentes</h2><Faq items={faqs} onWhite /></div>}
+      {esps.length > 0 && <div class="stack gap-12"><span class="eyebrow" style="color:var(--ink-500)">Especialidades que pedem este exame</span><div class="row gap-8" style="flex-wrap:wrap">{esps.map((e) => <a class="chip" href={`/especialidades/${e.slug}`}>{e.nome}</a>)}</div></div>}
+    </div>
+  </section>
+
+  {rel.length > 0 && (
+    <section class="wrap stack gap-20" style="padding-bottom:80px">
+      <h2 class="h3" style="font-size:26px">Outros exames de {cat?.nome.toLowerCase()}</h2>
+      <div class="grid g4" style="gap:16px">{rel.map((r) => <a class="list-row" href={`/exames/${r.slug}`}><span><strong>{r.nome}</strong></span><span aria-hidden="true" style="color:var(--red-700)">→</span></a>)}</div>
+    </section>
+  )}
+  <CtaBand titulo={`Vai fazer ${x.nome.toLowerCase()}?`} texto="Mande o pedido médico pelo WhatsApp. A recepção confirma o preparo, o horário e a cobertura do seu convênio." botao={x.cta_texto || 'Agendar pelo WhatsApp'} href={wa(msg)} />
+</Base>

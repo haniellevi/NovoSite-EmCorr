@@ -1,0 +1,227 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Faq from '../components/Faq.astro';
+import { site, wa, equipe } from '../data/site';
+
+const atalhos = [
+  { t: 'Agendar', s: 'Pelo WhatsApp', i: 'calendar', h: wa() },
+  { t: 'Resultados', s: 'Veja pelo celular', i: 'file', h: '/resultados' },
+  { t: 'Preparo de exames', s: 'Jejum e o que levar', i: 'list', h: '/exames' },
+  { t: 'Convênios', s: 'Medplan, Humana, Camed', i: 'card', h: '/convenios' },
+  { t: 'Como chegar', s: site.endereco.rua, i: 'pin', h: site.mapsUrl },
+];
+const fases = [
+  { t: 'Crianças', d: 'Consulta, dentista e os testes do recém-nascido no mesmo endereço.', it: 'Pediatria · Odontopediatria · Fonoaudiologia · Testes do pezinho, da orelhinha e da linguinha', c: 'Ver atendimento infantil', h: '/especialidades/pediatria', img: '/img/fase-criancas2.jpg' },
+  { t: 'Adultos', d: 'Consulta com especialista e o exame pedido feito no mesmo prédio.', it: 'Cardiologia · Endocrinologia · Neurologia · Otorrino · Cirurgia geral', c: 'Ver especialidades', h: '/especialidades', img: '/img/fase-adultos.jpg' },
+  { t: 'Mulheres', d: 'Mamografia e ultrassom, inclusive o morfológico da gestação, sem viajar.', it: 'Mamografia · Ultrassonografia · Ultrassom morfológico', c: 'Ver exames', h: '/exames/mamografia', img: '/img/fase-mulheres.jpg' },
+  { t: 'Dentes', d: 'Avaliação, aparelho e implante, com raio-X panorâmico e tomografia odontológica no local.', it: 'Odontologia · Ortodontia · Odontopediatria', c: 'Ver odontologia', h: '/especialidades/odontologia', img: '/img/fase-dentes.jpg' },
+  { t: 'Corpo e mente', d: 'Conversa em sala reservada, sob sigilo profissional.', it: 'Psicologia · Psiquiatria · Nutrição · Fisioterapia', c: 'Ver atendimentos', h: '/especialidades/psicologia', img: '/img/fase-mente.jpg' },
+];
+const exames = [
+  { t: 'Exames de sangue', d: 'Veja se precisa de jejum antes de vir.', h: '/exames/exames-laboratoriais' },
+  { t: 'Tomografia', d: 'Tomógrafo GE ACT Revolution, aqui em Corrente.', h: '/exames/tomografia-computadorizada' },
+  { t: 'Ultrassom', d: 'Abdome, tireoide, pélvico, obstétrico e outros.', h: '/exames/ultrassonografia' },
+  { t: 'Exames do coração', d: 'Eletrocardiograma, ecocardiograma, Holter e MAPA.', h: '/exames/ecocardiograma' },
+  { t: 'Raio-X', d: 'Inclusive o panorâmico, que o dentista pede.', h: '/exames/raio-x' },
+  { t: 'Mamografia', d: 'Com as orientações de preparo antes do exame.', h: '/exames/mamografia' },
+];
+const galeria = [
+  ['/img/recepcao-ludmilla.jpg', 'Recepção'], ['/img/sala-espera.jpg', 'Sala de espera'], ['/img/laboratorio.jpg', 'Laboratório'],
+  ['/img/microscopio.jpg', 'Análises clínicas'], ['/img/equipe-odonto.jpg', 'Odontologia'], ['/img/corredor.jpg', 'Consultórios'],
+];
+const passos = [
+  ['Mande uma mensagem', 'Diga o que precisa: consulta, dentista ou exame. Se tiver pedido médico, mande a foto.'],
+  ['A recepção confirma', 'Você recebe o dia, o horário, o preparo e o que levar.'],
+  ['Atendimento e resultado online', 'Quando o exame fica pronto, o resultado abre pelo celular.'],
+];
+const faqs = [
+  { p: 'Quais convênios vocês aceitam?', r: 'Medplan, Humana Saúde e Camed, e também particular. A cobertura muda de um plano para outro. Antes de vir, confirme pelo WhatsApp se a sua consulta ou exame está incluído.' },
+  { p: 'Como faço para agendar?', r: `Mande uma mensagem para ${site.whatsappExibicao} dizendo o que precisa. A recepção confirma o dia e o horário. Se preferir, preencha o formulário do site e a recepção chama você.` },
+  { p: 'Preciso de preparo para exame de sangue ou tomografia?', r: 'Depende do exame. Alguns exames de sangue pedem jejum. A tomografia com contraste tem orientações próprias. Cada página de exame explica o preparo, e a recepção confirma quando você marca.' },
+  { p: 'Como vejo o resultado do meu exame?', r: 'Pelo celular. Na página Resultados, você escolhe o tipo de exame e o site mostra o portal certo.' },
+  { p: 'Vocês atendem pacientes de outras cidades?', r: 'Sim, de Corrente e de toda a região. Pergunte pelo WhatsApp se dá para marcar consulta e exame no mesmo dia. O resultado sai online, então você não volta só para buscar.' },
+];
+const faqLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.p, acceptedAnswer: { '@type': 'Answer', text: f.r } })) };
+const conv = [...site.convenios];
+---
+<Base title="Clínica médica e odontológica em Corrente-PI | EmCORR" description="Consulta, dentista, laboratório e tomografia no mesmo endereço, no centro de Corrente-PI. Medplan, Humana Saúde, Camed e particular. Agende pelo WhatsApp." jsonld={[faqLd]}>
+  <section class="hero split">
+    <div class="stack gap-24">
+      <span class="eyebrow">Centro Clínico em Corrente-PI · desde {site.fundacao}</span>
+      <h1 class="h1-xl">Consulta, dentista e exame no mesmo endereço, aqui em <em>Corrente</em>.</h1>
+      <p class="lead" style="max-width:540px">Atendemos Medplan, Humana Saúde, Camed e particular. Você marca pelo WhatsApp e a recepção confirma o horário.</p>
+      <div class="row gap-16" style="flex-wrap:wrap">
+        <a class="btn btn-p" href={wa()} data-evento="click_whatsapp"><Icon name="chat" size={20} stroke={2} />Agendar pelo WhatsApp</a>
+        <a class="link-arrow" href="/resultados">Ver meu resultado →</a>
+      </div>
+      <div class="proof">
+        <span><Icon name="check" size={20} class="c-red" />Desde {site.fundacao} em Corrente</span>
+        <span><Icon name="check" size={20} />{site.numeros.profissionais} profissionais</span>
+        <span><Icon name="check" size={20} />{site.numeros.atendimentos} atendimentos</span>
+      </div>
+    </div>
+    <div class="hero-media">
+      <video id="hero-video" src="/video/hero-loop.mp4" poster="/img/hero-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Imagens da EmCORR: fachada, recepção, tomógrafo, laboratório e consultório"></video>
+      <div class="overlay">
+        <a class="pill-play" href="#video"><span><Icon name="play" size={16} fill /></span>Conheça a clínica em 1 minuto</a>
+        <button class="icon-btn" type="button" data-pause="hero-video" data-label="vídeo" aria-label="Pausar vídeo" aria-pressed="false"><Icon name="pause" size={16} fill /></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:32px;padding-bottom:24px">
+    <div class="grid g5">
+      {atalhos.map((a) => (
+        <a class="card row gap-16" href={a.h} style="padding:20px;box-shadow:none;border:1px solid var(--sand-200)">
+          <span class="ic" style="width:48px;height:48px"><Icon name={a.i} /></span>
+          <span class="stack"><strong style="font-weight:600;color:var(--ink-900)">{a.t}</strong><span class="small muted">{a.s}</span></span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-sm stack gap-32" style="border-bottom:1px solid var(--sand-200)">
+    <div class="wrap row gap-24">
+      <span class="eyebrow muted hide-mobile" style="color:var(--ink-500);flex-shrink:0">Convênios aceitos</span>
+      <div class="marquee" id="convenios">
+        <div class="marquee-track">
+          {[0, 1, 2, 3].map((n) => conv.map((c) => <img src={c.logo} alt={n === 0 ? c.nome : ''} aria-hidden={n === 0 ? undefined : 'true'} width="150" height="60" loading="lazy" />).concat(<span class="chip" aria-hidden={n === 0 ? undefined : 'true'}>Particular</span>))}
+        </div>
+      </div>
+      <button class="icon-btn" style="border:1.5px solid var(--sand-200);background:#fff" type="button" data-pause="convenios" data-label="carrossel de convênios" aria-label="Pausar carrossel de convênios" aria-pressed="false"><Icon name="pause" size={14} fill /></button>
+    </div>
+    <div class="wrap grid g4 stats" style="align-items:end">
+      <div class="stat"><b>{site.fundacao}</b><span>ano de abertura, na Av. Getúlio Vargas</span></div>
+      <div class="stat"><b>{site.numeros.atendimentos}</b><span>atendimentos registrados</span></div>
+      <div class="stat"><b>{site.numeros.profissionais}</b><span>profissionais no mesmo endereço</span></div>
+      <a class="link-arrow" href="/convenios">Ver convênios e o que levar →</a>
+    </div>
+  </section>
+
+  <section class="wrap section stack gap-40" style="gap:40px">
+    <div class="row gap-24" style="justify-content:space-between;align-items:flex-end;flex-wrap:wrap">
+      <div class="stack gap-12" style="max-width:640px">
+        <span class="eyebrow">Especialidades</span>
+        <h2 class="h2">Para quem você está <em>marcando?</em></h2>
+        <p class="lead">Escolha o grupo. Cada um mostra as especialidades, os exames e quem atende.</p>
+      </div>
+      <a class="btn btn-s" href="/especialidades">Ver todas as especialidades</a>
+    </div>
+    <div class="grid g5">
+      {fases.map((f) => (
+        <a class="card stack" href={f.h}>
+          <img src={f.img} alt="" width="600" height="400" loading="lazy" style="width:100%;height:190px;object-fit:cover" />
+          <div class="stack gap-8" style="padding:22px;flex-grow:1">
+            <strong class="h3" style="font-size:21px">{f.t}</strong>
+            <span style="font-size:15px;line-height:1.55">{f.d}</span>
+            <span class="small muted" style="line-height:1.5">{f.it}</span>
+            <span style="margin-top:auto;padding-top:8px;font-weight:500;color:var(--red-700);font-size:15px">{f.c} →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-inline:40px;padding-bottom:96px">
+    <div class="band split" style="gap:56px;align-items:stretch">
+      <div class="stack gap-24">
+        <span class="eyebrow">Exames</span>
+        <h2 class="h2" style="color:#fff">O exame que o médico pediu, feito aqui mesmo</h2>
+        <p style="font-size:18px;line-height:1.6">Laboratório, tomografia, ultrassom, raio-X e exames do coração ficam no mesmo prédio da consulta. Você faz o exame sem viajar e vê o resultado pelo celular.</p>
+        <div class="grid g2" style="gap:12px">
+          {exames.map((e) => <a class="band-link" href={e.h}><strong style="font-weight:600">{e.t}</strong><small>{e.d}</small></a>)}
+        </div>
+        <div class="row gap-16" style="flex-wrap:wrap"><a class="btn btn-w" href={wa('Olá, tenho pedido médico e quero agendar um exame na EmCORR.')}>Agendar meu exame</a><a href="/exames" style="color:#fff;text-decoration:underline;font-weight:500">Ver preparo dos exames</a></div>
+      </div>
+      <div class="stack gap-16">
+        <div style="position:relative;border-radius:24px;overflow:hidden;min-height:360px;flex-grow:1">
+          <img src="/img/tomografo.jpg" alt="Sala de tomografia da EmCORR, com o tomógrafo GE ACT Revolution" width="830" height="560" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+          <img class="hide-mobile" src="/img/tomografia-3d.jpg" alt="Reconstrução 3D de uma tomografia feita na EmCORR" width="830" height="560" loading="lazy" style="position:absolute;right:20px;top:20px;width:210px;height:142px;object-fit:cover;border-radius:16px;border:4px solid #fff" />
+        </div>
+        <div class="stack gap-8" style="background:#fff;border-radius:24px;padding:28px 32px;color:var(--ink-700)">
+          <strong class="h3">Tomografia computadorizada em Corrente</strong>
+          <span class="small muted">Tomógrafo GE ACT Revolution · convênio e particular</span>
+          <span style="font-size:16px;line-height:1.55;color:var(--ink-700)">Tem o pedido médico? Mande uma foto pelo WhatsApp. A recepção confirma o preparo e o horário.</span>
+          <div><a class="btn btn-p" href={wa('Olá, tenho pedido médico e quero agendar tomografia. Quais os horários e o preparo?')} style="margin-top:6px">Agendar minha tomografia</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="video" class="bg-cream wrap section stack gap-48">
+    <div class="split" style="grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px">
+      <video src="/video/institucional-web.mp4" poster="/img/video-poster.jpg" controls preload="none" style="width:100%;aspect-ratio:16/9;border-radius:28px;background:#231F1F;box-shadow:0 20px 48px rgb(60 20 20 / .16)" aria-label="Vídeo institucional da EmCORR, com a Dra. Ludmilla Nery"></video>
+      <div class="stack gap-20">
+        <span class="eyebrow">Por dentro da EmCORR</span>
+        <h2 class="h2">Conheça a clínica <em>antes de vir</em></h2>
+        <blockquote style="margin:0;font:italic 500 21px/1.5 Poppins;color:var(--ink-900)">"Aqui a sua saúde e o seu bem-estar são a nossa maior prioridade."</blockquote>
+        <div class="row gap-12"><img src="/img/p-ludmilla.png" alt="" width="56" height="56" style="width:56px;height:56px;border-radius:999px;object-fit:cover" /><span class="small" style="line-height:1.45"><strong style="color:var(--ink-900)">Dra. Ludmilla Nery Custódio</strong><br />Cardiologista e diretora médica<br /><span class="muted">CRM-PI 5888 · RQE 2142</span></span></div>
+        <p class="small muted">Vídeo de 1min20 · recepção, consultórios, laboratório, odontologia e sala de tomografia.</p>
+      </div>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px">
+      {galeria.map(([src, cap]) => <figure style="margin:0" class="stack gap-8"><img src={src} alt={`${cap} da EmCORR`} width="830" height="560" loading="lazy" style="width:100%;height:170px;object-fit:cover;border-radius:18px" /><figcaption class="small muted">{cap}</figcaption></figure>)}
+    </div>
+  </section>
+
+  <section class="wrap section stack gap-40" style="gap:40px">
+    <div class="stack gap-12" style="align-items:center;text-align:center"><span class="eyebrow">Agendamento</span><h2 class="h2">Como <em>marcar</em></h2></div>
+    <div class="grid g3" style="gap:24px">
+      {passos.map(([t, d], i) => <div class="box stack gap-12"><span class="ic" style="width:44px;height:44px;font-weight:600;color:var(--red-700)">{i + 1}</span><strong class="h3">{t}</strong><span>{d}</span></div>)}
+    </div>
+    <div class="row gap-20" style="justify-content:center;flex-wrap:wrap"><a class="btn btn-p" href={wa()}>Agendar pelo WhatsApp</a><span>Prefere que a recepção chame você? <a href="/agendar" style="font-weight:500">Preencha o formulário</a></span></div>
+  </section>
+
+  <section class="bg-cream wrap section stack gap-40" style="gap:40px">
+    <div class="row gap-24" style="justify-content:space-between;align-items:flex-end;flex-wrap:wrap">
+      <div class="stack gap-12" style="max-width:640px"><span class="eyebrow">Corpo clínico</span><h2 class="h2">Quem atende <em>na EmCORR</em></h2><p class="lead">São {site.numeros.profissionais} profissionais. Cada perfil mostra o registro no conselho e os dias de atendimento.</p></div>
+      <a class="btn btn-s" href="/corpo-clinico">Ver todos os profissionais</a>
+    </div>
+    <div class="grid g4">
+      {equipe.map((m) => (
+        <a class="card stack" href={`/corpo-clinico/${m.slug}`}>
+          <img src={m.foto} alt={`${m.nome}, ${m.funcao}, ${m.registro}`} width="480" height="425" loading="lazy" style="width:100%;height:280px;object-fit:cover;object-position:top" />
+          <div class="stack gap-4" style="padding:22px;gap:4px"><strong style="font:600 19px/1.3 Poppins;color:var(--ink-900)">{m.nome}</strong><span style="font-size:15px">{m.funcao}</span><span class="small muted">{m.registro}{m.rqe ? ` · ${m.rqe}` : ''}</span></div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap section split" style="grid-template-columns:minmax(0,.8fr) minmax(0,2fr);align-items:start">
+    <div class="stack gap-12"><span class="eyebrow">Pacientes</span><h2 class="h2">O que dizem <em>os pacientes</em></h2><p class="small muted">Depoimentos publicados com autorização dos pacientes.</p></div>
+    <div class="grid g2">
+      {[
+        ['É reconfortante saber que temos esse recurso para os moradores e visitantes de Corrente e região. Que Deus os abençoe e os direcione sempre.', 'Marta', '/img/marta.jpg'],
+        ['Gratidão EmCORR e seus colaboradores por cuidar tão bem e com carinho dos meus entes queridos. Em especial, à minha mãe, que necessitou de um longo tratamento.', 'Suele', '/img/suele.jpg'],
+      ].map(([t, n, f]) => (
+        <figure class="bg-cream stack gap-20" style="margin:0;border-radius:24px;padding:36px">
+          <span aria-hidden="true" style="font:600 64px/.6 Poppins;color:var(--red-500)">“</span>
+          <blockquote style="margin:0;font-size:18px;line-height:1.6;color:var(--ink-900)">{t}</blockquote>
+          <figcaption class="row gap-12" style="margin-top:auto"><img src={f} alt="" width="48" height="48" loading="lazy" style="width:48px;height:48px;border-radius:999px;object-fit:cover" /><strong style="color:var(--ink-900)">{n}</strong></figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-cream wrap section split" style="grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-items:start">
+    <div class="stack gap-24"><h2 class="h2">Perguntas frequentes</h2><Faq items={faqs} /><a class="link-arrow" href={wa('Olá, tenho uma dúvida sobre a EmCORR.')}>Não achou sua dúvida? Falar com a recepção →</a></div>
+    <div class="card stack gap-16" style="padding:36px;box-shadow:none;border:1px solid var(--sand-200)">
+      <span class="eyebrow">Resultados</span><h3 style="font-size:28px">Seu resultado já saiu?</h3><p>Veja pelo celular, sem vir à clínica. Escolha o tipo de exame:</p>
+      {[['Laboratório', 'Sangue, urina, fezes, teste do pezinho'], ['Imagem', 'Tomografia, raio-X, ultrassom, mamografia'], ['Outros exames', 'Eletrocardiograma, Holter, MAPA, audiometria']].map(([t, d]) => <a class="list-row bg-cream" href="/resultados" style="border:0"><span><strong>{t}</strong><small>{d}</small></span><span aria-hidden="true" style="color:var(--red-700);font-size:20px">→</span></a>)}
+    </div>
+  </section>
+
+  <section class="wrap" style="padding:96px 40px">
+    <div class="split" style="border-radius:32px;overflow:hidden;background:var(--ink-900);gap:0">
+      <img src="/img/aerea-full.jpg" alt="Vista aérea da EmCORR, na Av. Getúlio Vargas, em Corrente-PI" width="1210" height="560" loading="lazy" style="width:100%;height:100%;min-height:360px;object-fit:cover" />
+      <div class="stack gap-20" style="padding:56px;color:#fff">
+        <span class="eyebrow" style="color:var(--rose-50)">Como chegar</span>
+        <h2 style="font-size:38px;line-height:1.15;color:#fff">Av. Getúlio Vargas, 471, no centro de Corrente</h2>
+        {site.horario && <p style="color:#EFE6E1">{site.horario.semana}</p>}
+        <p style="font-size:15px;color:#CFC4BF">Medplan · Humana Saúde · Camed · Particular</p>
+        <div class="row gap-16" style="flex-wrap:wrap"><a class="btn btn-p" href={wa()}>Agendar pelo WhatsApp</a><a href={site.mapsUrl} target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;font-weight:500">Traçar rota</a></div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+import Crumbs from '../../components/Crumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { posts } from '../../data/posts';
+import { wa } from '../../data/site';
+const p = posts.find((x) => x.slug === 'tomografia-em-corrente-preparo-e-laudo')!;
+const msg = 'Olá, tenho pedido médico e quero agendar tomografia. Quais os horários e o preparo?';
+const ld = [{ '@context': 'https://schema.org', '@type': 'Article', headline: p.titulo, datePublished: p.data, dateModified: p.data, author: { '@type': 'Organization', name: 'EmCORR – Centro Clínico' }, publisher: { '@id': 'https://emcorr.com.br/#clinica' }, image: new URL(p.capa, Astro.site).toString() }];
+---
+<Base title={`${p.titulo} | EmCORR`} description={p.resumo} nav="Blog" waMsg={msg} image={p.capa} jsonld={ld}>
+  <Crumbs items={[['Início', '/'], ['Blog', '/blog'], ['Tomografia em Corrente']]} />
+  <section class="wrap stack gap-16" style="padding-top:36px;padding-bottom:40px;max-width:1000px">
+    <span class="eyebrow">{p.categoria}</span>
+    <h1 class="h1" style="font-size:48px">{p.titulo}</h1>
+    <span class="small muted">{p.autor} · atualizado em {new Date(p.data + 'T12:00:00').toLocaleDateString('pt-BR')} · {p.leitura} de leitura</span>
+  </section>
+  <section class="wrap"><img class="photo" src={p.capa} alt="Tomógrafo GE ACT Revolution da EmCORR" width="830" height="560" style="height:440px" /></section>
+  <section class="wrap split" style="grid-template-columns:minmax(0,1fr) 320px;align-items:start;padding-top:56px;padding-bottom:88px">
+    <article class="stack gap-24 prose" style="font-size:18px">
+      <div class="quick" style="font-size:18px;color:var(--ink-900)"><strong>Resposta rápida:</strong> a tomografia sem contraste, em geral, não precisa de jejum. Com contraste, costuma pedir algumas horas de jejum, e a recepção confirma o tempo quando marca. Na EmCORR, o exame é feito no tomógrafo GE ACT Revolution e o laudo sai no portal de imagem.</div>
+      <h2 class="h3" style="font-size:28px">Como marcar</h2>
+      <p>Mande uma foto do pedido médico pelo WhatsApp. A recepção confere o tipo de tomografia, diz se tem contraste, passa o preparo e confirma o horário. Se você tem convênio, mande também a carteirinha: alguns planos pedem autorização antes do exame.</p>
+      <h2 class="h3" style="font-size:28px">Com contraste e sem contraste</h2>
+      <p>O contraste é um líquido aplicado na veia que realça vasos e órgãos. Quem decide se ele é necessário é o médico que pediu o exame. Se o pedido diz "com contraste", a recepção pergunta sobre alergia, doença nos rins e diabetes antes de marcar.</p>
+      <h2 class="h3" style="font-size:28px">O que levar no dia</h2>
+      <ul class="checks">{['Pedido médico', 'Documento com foto e carteirinha do convênio', 'Exames anteriores da mesma região do corpo', 'Exame de creatinina recente, se for com contraste'].map((t) => <li><Icon name="check" />{t}</li>)}</ul>
+      <div class="box row gap-16" style="justify-content:space-between;flex-wrap:wrap;border:1.5px solid var(--red-500)"><span style="font-size:16px"><strong style="color:var(--ink-900)">Na EmCORR:</strong> tomografia com Medplan, Humana Saúde, Camed e particular.</span><a class="btn btn-p btn-sm" href={wa(msg)}>Agendar</a></div>
+      <h2 class="h3" style="font-size:28px">Quanto tempo leva</h2>
+      <p>No aparelho, poucos minutos. Contando a recepção e o posicionamento, reserve cerca de meia hora. Com contraste, pode levar um pouco mais.</p>
+      <h2 class="h3" style="font-size:28px">Onde sai o resultado</h2>
+      <p>O laudo e as imagens ficam no portal de imagem, chamado Entrega de Exames. O login e a senha são entregues na recepção. Leve o laudo ao médico que pediu o exame: é ele quem interpreta o resultado.</p>
+      <p class="small muted" style="border-top:1px solid var(--sand-200);padding-top:20px">Este conteúdo é educativo e não substitui a consulta. Se tiver sintomas, procure um profissional de saúde.</p>
+    </article>
+    <aside class="stack gap-16" style="position:sticky;top:110px">
+      <div class="card stack gap-12" style="padding:26px"><strong class="h3" style="font-size:19px">Vai fazer a tomografia?</strong><span style="font-size:15px">Mande a foto do pedido médico. A recepção confirma o preparo e o horário.</span><a class="btn btn-p btn-sm" href={wa(msg)}>Agendar pelo WhatsApp</a><a class="link-arrow" href="/exames/tomografia-computadorizada" style="font-size:15px">Ver a página do exame →</a></div>
+    </aside>
+  </section>
+</Base>

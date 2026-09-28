@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import Crumbs from '../../components/Crumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { especialidade, grupos, iconeEspecialidade } from '../../lib';
+import { wa, site } from '../../data/site';
+---
+<Base title="Especialidades médicas e odontológicas em Corrente-PI | EmCORR" description="Cardiologia, pediatria, endocrinologia, odontologia, psicologia e mais 10 especialidades no mesmo endereço, em Corrente-PI. Agende pelo WhatsApp." nav="Especialidades">
+  <Crumbs items={[['Início', '/'], ['Especialidades']]} />
+  <section class="wrap stack gap-20" style="padding-top:32px;padding-bottom:48px;max-width:980px">
+    <span class="eyebrow">{site.numeros.especialidades} especialidades · um endereço</span>
+    <h1 class="h1">Especialidades na EmCORR, em <em>Corrente</em></h1>
+    <p class="lead">Médicos, dentistas, psicóloga, nutricionista, fono e fisioterapia no mesmo prédio. Escolha a área e fale com a recepção pelo WhatsApp.</p>
+  </section>
+  <section class="wrap stack gap-48" style="padding-bottom:88px">
+    {grupos.map(([nome, slugs]) => (
+      <div class="stack gap-20">
+        <h2 class="h3" style="font-size:26px">{nome}</h2>
+        <div class="grid g3">
+          {slugs.map((s) => especialidade(s)).filter(Boolean).map((e) => (
+            <a class="card stack gap-12" href={`/especialidades/${e!.slug}`} style="padding:26px">
+              <span class="ic"><Icon name={iconeEspecialidade[e!.slug] ?? 'heart'} /></span>
+              <strong class="h3" style="font-size:21px">{e!.nome}</strong>
+              <span style="font-size:15px;line-height:1.55">{e!.resumo}</span>
+              <span style="margin-top:auto;font-weight:500;color:var(--red-700);font-size:15px">Conhecer →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </section>
+  <CtaBand titulo="Não sabe qual especialista procurar?" texto="Diga à recepção o que está sentindo ou o que o médico pediu. Ela indica o profissional e já marca o horário." botao="Falar com a recepção" href={wa('Olá, não sei qual especialista procurar. Podem me ajudar?')} />
+</Base>

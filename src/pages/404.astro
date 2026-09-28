@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import { wa, site } from '../data/site';
+---
+<Base title="Página não encontrada | EmCORR" description="A página que você procurou não existe ou mudou de endereço.">
+  <section class="wrap section stack gap-20" style="max-width:760px">
+    <span class="eyebrow">Erro 404</span>
+    <h1 class="h1">Não encontramos essa página.</h1>
+    <p class="lead">Ela pode ter mudado de endereço. Volte para o início ou fale com a recepção pelo WhatsApp {site.whatsappExibicao}.</p>
+    <div class="row gap-16" style="flex-wrap:wrap"><a class="btn btn-p" href="/">Voltar para o início</a><a class="btn btn-s" href={wa()}>Falar com a recepção</a></div>
+  </section>
+</Base>

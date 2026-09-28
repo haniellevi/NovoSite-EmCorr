@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import Crumbs from '../components/Crumbs.astro';
+import Faq from '../components/Faq.astro';
+import Icon from '../components/Icon.astro';
+import { site, wa } from '../data/site';
+const cards = [
+  { i: 'flask', t: 'Laboratório', ex: 'sangue, urina, fezes, teste do pezinho, toxicológico', p: site.portais.laboratorio, extra: '' },
+  { i: 'scan', t: 'Imagem', ex: 'tomografia, raio-X, ultrassom, mamografia', p: site.portais.radiologia, extra: 'O portal de imagem se chama "Entrega de Exames". É o sistema que a EmCORR usa para os laudos de radiologia.' },
+  { i: 'heart', t: 'Outros exames', ex: 'eletrocardiograma, Holter, MAPA, ecocardiograma, audiometria, espirometria', p: site.portais.outros, extra: '' },
+];
+const faqs = [
+  { p: 'Perdi minha senha. O que faço?', r: 'Mande seu nome completo pelo WhatsApp. Por segurança, a recepção confirma alguns dados antes de enviar o acesso.' },
+  { p: 'Preciso levar o resultado ao médico?', r: 'Sim. Leve o laudo impresso ou no celular na consulta de retorno. Quem interpreta o resultado é o médico que pediu o exame.' },
+  { p: 'Onde está minha senha?', r: 'O login e a senha são entregues na recepção no dia do exame. Se não encontrar, a recepção ajuda pelo WhatsApp.' },
+];
+---
+<Base title="Resultado de exames EmCORR: acesse online" description="Veja o resultado dos seus exames da EmCORR pelo celular: laboratório, imagem e outros. Saiba qual portal usar e como pedir ajuda." waMsg="Olá, preciso de ajuda para ver o resultado do meu exame.">
+  <Crumbs items={[['Início', '/'], ['Resultados']]} />
+  <section class="wrap stack gap-20" style="padding-top:32px;padding-bottom:40px;max-width:980px">
+    <span class="eyebrow">Resultados online</span>
+    <h1 class="h1">Resultado do <em>seu exame</em></h1>
+    <p class="lead">Escolha o tipo de exame que você fez. Mostramos o portal certo.</p>
+    <p class="row gap-8 small muted"><Icon name="lock" size={18} />O site da EmCORR não pede nem guarda seus dados. Ele só leva você ao portal onde o resultado está.</p>
+  </section>
+  <section class="wrap stack gap-24" style="padding-bottom:72px">
+    <h2 class="h3" style="font-size:28px">Que exame você fez?</h2>
+    <div class="grid g3" style="gap:22px">
+      {cards.map((c) => (
+        <div class="card stack gap-16" style="padding:32px">
+          <span class="ic" style="width:60px;height:60px"><Icon name={c.i} size={28} /></span>
+          <strong class="h3" style="font-size:26px">{c.t}</strong>
+          <span style="font-size:15px"><span class="muted">Exemplos:</span> {c.ex}</span>
+          {c.extra && <span style="font-size:14px">{c.extra}</span>}
+          <a class="btn btn-p" href={c.p.url} target="_blank" rel="noopener" style="margin-top:auto" data-evento="click_resultados">Abrir {c.p.nome.toLowerCase()} <Icon name="external" size={18} /></a>
+          <span class="small muted" style="text-align:center">{new URL(c.p.url).host} · abre em nova aba</span>
+        </div>
+      ))}
+    </div>
+  </section>
+  <section class="wrap split" style="grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);align-items:start;padding-bottom:88px">
+    <div class="bg-cream stack gap-16" style="border-radius:24px;padding:36px"><strong class="h3" style="font-size:26px">Não encontrou seu resultado?</strong><span>Ele pode não estar pronto, ou a senha pode ter se perdido. Mande uma mensagem com seu nome completo e a recepção ajuda.</span><a class="btn btn-p" href={wa('Olá, não encontrei o resultado do meu exame. Meu nome completo é:')} style="width:fit-content"><Icon name="chat" size={20} stroke={2} />Não encontrei meu resultado</a></div>
+    <div class="stack gap-12"><h2 class="h3" style="font-size:28px">Perguntas frequentes</h2><Faq items={faqs} onWhite /></div>
+  </section>
+</Base>

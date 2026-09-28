@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+import Crumbs from '../components/Crumbs.astro';
+import Faq from '../components/Faq.astro';
+import Icon from '../components/Icon.astro';
+import { site, wa } from '../data/site';
+import { especialidadesAtivas, examesAtivos } from '../lib';
+const faqs = [
+  { p: 'O horário já fica marcado quando envio?', r: 'Ainda não. A mensagem é um pedido de agendamento. A consulta ou o exame só ficam marcados quando a recepção confirma com você.' },
+  { p: 'Por que não pedem CPF aqui?', r: 'Porque não é preciso para pedir um horário. Se o convênio ou o exame exigir, a recepção pede na confirmação.' },
+  { p: 'Posso marcar para outra pessoa?', r: 'Sim. Coloque o seu nome e, na conversa, diga para quem é.' },
+];
+---
+<Base title="Agendar consulta ou exame na EmCORR em Corrente-PI" description={`Marque consulta, dentista ou exame na EmCORR, em Corrente-PI, pelo WhatsApp ${site.whatsappExibicao}. A recepção confirma dia, horário e preparo.`}>
+  <Crumbs items={[['Início', '/'], ['Agendar']]} />
+  <section class="wrap stack gap-20" style="padding-top:32px;padding-bottom:48px;max-width:980px">
+    <span class="eyebrow">Agendamento</span>
+    <h1 class="h1">Agendar consulta ou exame <em>na EmCORR</em></h1>
+    <p class="lead">Escolha o canal. A recepção confirma o dia, o horário e o preparo.</p>
+  </section>
+  <section class="wrap grid g2" style="padding-bottom:56px;gap:22px">
+    <div class="band stack gap-16" style="padding:40px;border-radius:28px"><span class="eyebrow">Mais rápido</span><strong style="font:600 30px/1.2 Poppins;color:#fff">Pelo WhatsApp</strong><p style="font-size:17px">Você conversa direto com a recepção e já sai com o horário.</p><a class="btn btn-w" href={wa()} style="width:fit-content" data-evento="click_whatsapp"><Icon name="chat" size={20} stroke={2} />Agendar pelo WhatsApp</a><span class="small" style="color:var(--rose-50)">{site.whatsappExibicao}</span></div>
+    <div class="box stack gap-16" style="padding:40px;border-radius:28px;border-width:1.5px"><span class="eyebrow" style="color:var(--ink-500)">Monte sua mensagem</span><strong style="font:600 30px/1.2 Poppins;color:var(--ink-900)">Pelo formulário</strong><p style="font-size:17px">Preencha em 30 segundos. O site monta a mensagem e abre o WhatsApp com tudo escrito.</p><a class="btn btn-s" href="#form" style="width:fit-content">Preencher o formulário</a></div>
+  </section>
+  <section id="form" class="bg-cream wrap section split" style="grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:start">
+    <form class="form stack gap-20" style="background:#fff;border-radius:28px;padding:44px" novalidate data-wa={site.whatsapp}>
+      <h2 class="h3" style="font-size:28px">Monte sua mensagem para a recepção</h2>
+      <div class="grid g2" style="gap:18px">
+        <div class="stack gap-8"><label for="nome">Seu nome</label><input id="nome" name="nome" type="text" autocomplete="name" placeholder="Como prefere ser chamado?" required /><span class="err" id="nome-err" aria-live="polite"></span></div>
+        <div class="stack gap-8"><label for="servico">O que você quer marcar?</label>
+          <select id="servico" name="servico" required>
+            <option value="">Escolha uma opção</option>
+            <optgroup label="Consultas">{especialidadesAtivas.map((e) => <option value={`consulta de ${e.nome.toLowerCase()}`}>{e.nome}</option>)}</optgroup>
+            <optgroup label="Exames">{examesAtivos.map((x) => <option value={x.nome.toLowerCase()}>{x.nome}</option>)}</optgroup>
+            <option value="um atendimento (ainda não sei qual)">Ainda não sei</option>
+          </select><span class="err" id="servico-err" aria-live="polite"></span></div>
+      </div>
+      <fieldset class="stack gap-8"><legend>Convênio ou particular?</legend><div class="row gap-8" style="flex-wrap:wrap">{['Particular', 'Medplan', 'Humana Saúde', 'Camed', 'Ainda não sei'].map((o, i) => <label class="radio"><input type="radio" name="conv" value={o} checked={i === 0} />{o}</label>)}</div></fieldset>
+      <fieldset class="stack gap-8"><legend>Melhor período <span class="muted" style="font-weight:400">(opcional)</span></legend><div class="row gap-8" style="flex-wrap:wrap">{['Manhã', 'Tarde', 'Tanto faz'].map((o, i) => <label class="radio"><input type="radio" name="periodo" value={o} checked={i === 2} />{o}</label>)}</div></fieldset>
+      <label class="row gap-12" style="font-weight:400"><input type="checkbox" name="crianca" style="width:22px;height:22px;accent-color:var(--red-700)" />Sim, é para uma criança</label>
+      <div class="alert"><Icon name="lock" size={20} /><span><strong>Não escreva sintomas, diagnósticos ou resultados de exames aqui.</strong> Você conta isso no atendimento, com sigilo.</span></div>
+      <p class="small muted">Nada é enviado ao site. Ao tocar no botão, o WhatsApp abre com a mensagem pronta e você decide se envia.</p>
+      <button type="submit" class="btn btn-p" style="width:fit-content">Continuar no WhatsApp</button>
+    </form>
+    <div class="stack gap-20">
+      <img class="photo" src="/img/recepcao-ludmilla.jpg" alt="Recepção da EmCORR" width="830" height="560" loading="lazy" style="height:320px" />
+      <h2 class="h3" style="font-size:24px">Perguntas frequentes</h2>
+      <Faq items={faqs} />
+    </div>
+  </section>
+  <script>
+    const form = document.querySelector<HTMLFormElement>('form[data-wa]')!;
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const d = new FormData(form);
+      const nome = String(d.get('nome') || '').trim();
+      const serv = String(d.get('servico') || '');
+      const errN = document.getElementById('nome-err')!, errS = document.getElementById('servico-err')!;
+      errN.textContent = nome.length < 2 ? 'Escreva seu nome para a recepção saber com quem vai falar.' : '';
+      errS.textContent = !serv ? 'Escolha o que quer marcar. Se não souber, marque "Ainda não sei".' : '';
+      if (nome.length < 2) return (document.getElementById('nome') as HTMLInputElement).focus();
+      if (!serv) return (document.getElementById('servico') as HTMLSelectElement).focus();
+      const partes = [`Olá, meu nome é ${nome}. Quero marcar ${serv}.`, `Atendimento: ${d.get('conv')}.`, `Melhor período: ${d.get('periodo')}.`];
+      if (d.get('crianca')) partes.push('É para uma criança.');
+      partes.push('[site-form]');
+      window.location.href = `https://wa.me/${form.dataset.wa}?text=${encodeURIComponent(partes.join(' '))}`;
+    });
+  </script>
+</Base>

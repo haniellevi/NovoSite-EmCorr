@@ -1,0 +1,72 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import Crumbs from '../../components/Crumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import Faq from '../../components/Faq.astro';
+import { especialidadesAtivas, exame, especialidade, profissionaisDa, lista, val, iconeEspecialidade, type Rec } from '../../lib';
+import { site, wa } from '../../data/site';
+
+export function getStaticPaths() {
+  return especialidadesAtivas.map((e) => ({ params: { slug: e.slug }, props: { e } }));
+}
+const { e } = Astro.props as { e: Rec };
+const quando = lista(e.quando_procurar);
+const alerta = quando.filter((q) => /pronto-socorro|192|emerg/i.test(q));
+const sinais = quando.filter((q) => !alerta.includes(q));
+const exs = lista(e.exames_relacionados).map(exame).filter(Boolean) as Rec[];
+const rel = lista(e.especialidades_relacionadas).map(especialidade).filter(Boolean) as Rec[];
+const equipe = profissionaisDa(e.slug);
+const faqs = (e.faqs ?? []) as { p: string; r: string }[];
+const msg = val(e.whatsapp_mensagem) || `Olá, quero agendar ${e.nome.toLowerCase()} na EmCORR.`;
+const ld = [
+  { '@context': 'https://schema.org', '@type': 'MedicalWebPage', name: e.h1, about: { '@type': 'MedicalSpecialty', name: e.nome }, provider: { '@id': 'https://emcorr.com.br/#clinica' } },
+  ...(faqs.length ? [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.p, acceptedAnswer: { '@type': 'Answer', text: f.r } })) }] : []),
+];
+const imagens: Record<string, string> = { cardiologia: '/img/consultorio-ludmilla.jpg', odontologia: '/img/dentista.jpg', ortodontia: '/img/equipe-odonto.jpg', odontopediatria: '/img/fase-dentes.jpg', pediatria: '/img/fase-criancas2.jpg', psicologia: '/img/fase-mente.jpg', psiquiatria: '/img/medico-consultorio.jpg', otorrinolaringologia: '/img/corredor.jpg', neurologia: '/img/tomografo.jpg', ortopedia: '/img/tomografia-3d.jpg' };
+const foto = imagens[e.slug] ?? '/img/medico-consultorio.jpg';
+---
+<Base title={e.seo_title} description={e.seo_description} nav="Especialidades" waMsg={msg} jsonld={ld}>
+  <Crumbs items={[['Início', '/'], ['Especialidades', '/especialidades'], [e.nome]]} />
+  <section class="wrap split" style="padding-top:32px;padding-bottom:72px">
+    <div class="stack gap-20">
+      <span class="eyebrow">{e.grupo === 'odontologica' ? 'Odontologia' : 'Especialidade'}</span>
+      <h1 class="h1">{e.h1}</h1>
+      <p class="lead" style="font-size:20px">{e.subtitulo}</p>
+      {e.resposta_rapida && <div class="quick">{e.resposta_rapida}</div>}
+      <div class="row gap-16" style="flex-wrap:wrap"><a class="btn btn-p" href={wa(msg)} data-evento="click_whatsapp"><Icon name="chat" size={20} stroke={2} />{e.cta_texto || 'Agendar pelo WhatsApp'}</a>{exs.length > 0 && <a class="link-arrow" href="#exames">Ver exames relacionados →</a>}</div>
+    </div>
+    <div style="position:relative">
+      <img class="photo" src={foto} alt="" width="830" height="560" style="height:460px" />
+      {equipe[0] && <div class="card row gap-12 hide-mobile" style="position:absolute;left:-24px;bottom:-24px;padding:16px 22px 16px 16px"><img src={equipe[0].foto} alt="" width="60" height="60" style="width:60px;height:60px;border-radius:999px;object-fit:cover" /><span class="small" style="line-height:1.45"><strong style="font-size:16px;color:var(--ink-900)">{equipe[0].nome}</strong><br />{equipe[0].funcao.split(' · ')[0]} · {equipe[0].registro}{equipe[0].rqe ? ` · ${equipe[0].rqe}` : ''}</span></div>}
+    </div>
+  </section>
+
+  <section class="wrap split" style="grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:start;padding-bottom:80px">
+    <div class="stack gap-48">
+      {e.beneficio_abertura && <p class="lead prose" style="color:var(--ink-900)">{e.beneficio_abertura}</p>}
+      {e.como_e_a_consulta && <div class="stack gap-16"><h2 class="h3" style="font-size:28px">Como é a consulta na EmCORR</h2><p class="prose">{e.como_e_a_consulta}</p></div>}
+      {sinais.length > 0 && (
+        <div class="stack gap-16">
+          <h2 class="h3" style="font-size:28px">Quando procurar</h2>
+          <ul class="checks">{sinais.map((s) => <li><Icon name="check" />{s}</li>)}</ul>
+          {alerta.map((a) => <div class="alert"><strong style="color:var(--red-700)">Atenção:</strong><span>{a}</span></div>)}
+        </div>
+      )}
+      {faqs.length > 0 && <div class="stack gap-12"><h2 class="h3" style="font-size:28px">Perguntas frequentes</h2><Faq items={faqs} onWhite /></div>}
+    </div>
+    <aside class="stack gap-20">
+      <div class="card stack gap-16" style="padding:28px">
+        <span class="eyebrow muted" style="color:var(--ink-500)">Quem atende</span>
+        {equipe.length ? equipe.map((p) => (
+          <a class="row gap-12" href={`/corpo-clinico/${p.slug}`} style="color:var(--ink-700)"><img src={p.foto} alt="" width="72" height="72" style="width:72px;height:72px;border-radius:999px;object-fit:cover" /><span style="line-height:1.45"><strong style="color:var(--ink-900)">{p.nome}</strong><br /><span class="small">{p.funcao.split(' · ')[0]}</span><br /><span class="small muted">{p.registro}{p.rqe ? ` · ${p.rqe}` : ''}</span></span></a>
+        )) : <p style="font-size:15px">A recepção informa quem atende e os dias disponíveis.</p>}
+        <a class="btn btn-p" href={wa(msg)}>Agendar pelo WhatsApp</a>
+      </div>
+      {exs.length > 0 && <div id="exames" class="box stack gap-12"><span class="eyebrow" style="color:var(--ink-500)">Exames feitos aqui</span><div class="row gap-8" style="flex-wrap:wrap">{exs.map((x) => <a class="chip" href={`/exames/${x.slug}`}>{x.nome}</a>)}</div></div>}
+      <div class="box stack gap-12"><span class="eyebrow" style="color:var(--ink-500)">Convênios</span><div class="row gap-16" style="flex-wrap:wrap">{site.convenios.map((c) => <img src={c.logo} alt={c.nome} width="150" height="60" style="height:34px;width:auto" />)}<span class="small" style="font-weight:500">+ Particular</span></div></div>
+      {rel.length > 0 && <div class="box stack gap-8"><span class="eyebrow" style="color:var(--ink-500)">Especialidades relacionadas</span>{rel.map((r) => <a class="link-arrow" href={`/especialidades/${r.slug}`}>{r.nome} →</a>)}</div>}
+    </aside>
+  </section>
+  <CtaBand titulo={`Quer marcar ${e.nome.toLowerCase()}?`} texto="Mande uma mensagem pelo WhatsApp. A recepção confirma o dia, o horário e o que levar." botao="Agendar pelo WhatsApp" href={wa(msg)} />
+</Base>

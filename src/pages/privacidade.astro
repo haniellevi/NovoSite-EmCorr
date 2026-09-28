@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import Crumbs from '../components/Crumbs.astro';
+import { site } from '../data/site';
+---
+<Base title="Política de privacidade | EmCORR" description="Como o site da EmCORR trata dados pessoais: o que coleta, para quê e como falar com a clínica.">
+  <Crumbs items={[['Início', '/'], ['Política de privacidade']]} />
+  <section class="wrap stack gap-20 prose" style="padding-top:32px;padding-bottom:88px">
+    <h1 class="h1" style="font-size:44px">Política de privacidade</h1>
+    <p class="small muted">Versão preliminar, em revisão jurídica.</p>
+    <p>O site da {site.marca} não tem cadastro, login nem formulário que envie dados para a clínica. O botão de agendamento abre o WhatsApp com uma mensagem pronta, e você decide se envia.</p>
+    <p>Resultados de exames ficam nos portais dos laboratórios e da radiologia. O site só leva você até eles e não recebe nem guarda seus dados de saúde.</p>
+    <p>Usamos medição de audiência sem cookies de terceiros para saber quais páginas são mais visitadas. Nenhum dado identifica você.</p>
+    <p>Dúvidas sobre seus dados: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+  </section>
+</Base>

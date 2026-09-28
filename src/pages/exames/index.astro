@@ -1,0 +1,67 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import Crumbs from '../../components/Crumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { categoriasExame, examesAtivos, iconeCategoria } from '../../lib';
+import { wa } from '../../data/site';
+
+const grupos = categoriasExame
+  .map((c) => ({ ...c, itens: examesAtivos.filter((x) => x.categoria === c.slug) }))
+  .filter((c) => c.itens.length);
+---
+<Base title="Exames em Corrente-PI: tomografia, ultrassom e laboratório | EmCORR" description="Tomografia, ultrassom, raio-X, exames do coração e laboratório no mesmo prédio, em Corrente-PI. Veja preparo, duração e onde sai o resultado." nav="Exames">
+  <Crumbs items={[['Início', '/'], ['Exames']]} />
+  <section class="wrap split" style="padding-top:32px;padding-bottom:40px">
+    <div class="stack gap-20">
+      <span class="eyebrow">{examesAtivos.length} exames no mesmo prédio</span>
+      <h1 class="h1">Exames em <em>Corrente</em>, sem precisar viajar</h1>
+      <p class="lead">Laboratório, tomografia, ultrassom, raio-X e exames do coração. Cada página mostra o preparo, a duração e onde sai o resultado.</p>
+    </div>
+    <img class="photo" src="/img/laboratorio.jpg" alt="Laboratório da EmCORR" width="830" height="560" style="height:340px" />
+  </section>
+  <section class="wrap stack gap-20" style="padding-bottom:24px">
+    <label class="search" for="busca"><Icon name="search" /><input id="busca" type="search" placeholder="Buscar exame: tomografia, hemograma, ultrassom…" aria-label="Buscar exame" autocomplete="off" /></label>
+    <div class="row gap-8" style="flex-wrap:wrap" role="group" aria-label="Filtrar por grupo">
+      <button type="button" class="chip" aria-pressed="true" data-filtro="">Todos</button>
+      {grupos.map((g) => <button type="button" class="chip" aria-pressed="false" data-filtro={g.slug}>{g.nome}</button>)}
+    </div>
+  </section>
+  <section class="wrap" style="padding-bottom:72px">
+    {grupos.map((g) => (
+      <div class="split exam-group" data-grupo={g.slug} style="grid-template-columns:280px minmax(0,1fr);gap:40px;align-items:start;padding:36px 0;border-top:1px solid var(--sand-200)">
+        <div class="stack gap-12"><span class="ic"><Icon name={iconeCategoria[g.slug] ?? 'scan'} /></span><h2 class="h3" style="font-size:24px">{g.nome}</h2><span class="small muted">{g.descricao}</span></div>
+        <div class="grid g2" style="gap:12px">
+          {g.itens.map((x) => <a class="list-row" href={`/exames/${x.slug}`} data-nome={`${x.nome} ${x.resumo ?? ''}`.toLowerCase()}><span><strong>{x.nome}</strong><small>{x.resumo}</small></span><span aria-hidden="true" style="color:var(--red-700);font-size:20px">→</span></a>)}
+        </div>
+      </div>
+    ))}
+    <p id="sem-resultado" class="muted" hidden>Nenhum exame encontrado. <a href={wa('Olá, queria saber se a EmCORR faz um exame.')}>Pergunte à recepção pelo WhatsApp</a>.</p>
+  </section>
+  <CtaBand titulo="Tem o pedido médico na mão?" texto="Mande uma foto pelo WhatsApp. A recepção confirma o preparo, o horário e a cobertura do convênio." botao="Agendar meu exame" href={wa('Olá, tenho pedido médico e quero agendar um exame na EmCORR.')} />
+  <script>
+    const busca = document.getElementById('busca') as HTMLInputElement;
+    const chips = document.querySelectorAll<HTMLButtonElement>('[data-filtro]');
+    let grupo = '';
+    const norm = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    function aplicar() {
+      const q = norm(busca.value.trim());
+      let total = 0;
+      document.querySelectorAll<HTMLElement>('.exam-group').forEach((g) => {
+        let n = 0;
+        g.querySelectorAll<HTMLElement>('[data-nome]').forEach((a) => {
+          const ok = (!grupo || g.dataset.grupo === grupo) && (!q || norm(a.dataset.nome!).includes(q));
+          a.hidden = !ok; if (ok) n++;
+        });
+        g.hidden = n === 0; total += n;
+      });
+      (document.getElementById('sem-resultado') as HTMLElement).hidden = total > 0;
+    }
+    busca.addEventListener('input', aplicar);
+    chips.forEach((c) => c.addEventListener('click', () => {
+      grupo = c.dataset.filtro ?? '';
+      chips.forEach((x) => x.setAttribute('aria-pressed', String(x === c)));
+      aplicar();
+    }));
+  </script>
+</Base>

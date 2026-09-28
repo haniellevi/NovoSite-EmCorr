@@ -1,0 +1,862 @@
+[
+ {
+  "tipo_registro": "specialty",
+  "slug": "pediatria",
+  "nome": "Pediatria",
+  "grupo": "medica",
+  "ordem": 1,
+  "ativo": true,
+  "seo_title": "Pediatra em Corrente-PI | EmCORR",
+  "seo_description": "Consulta pediátrica do recém-nascido ao adolescente em Corrente-PI, com exames e dentista no mesmo endereço. Agende pelo WhatsApp.",
+  "h1": "Pediatra em Corrente-PI",
+  "subtitulo": "Consulta do recém-nascido ao adolescente, com exames e dentista no mesmo endereço.",
+  "resumo": "Rotina do bebê, criança doente e acompanhamento do crescimento, com testes do recém-nascido aqui mesmo.",
+  "beneficio_abertura": "O pediatra acompanha seu filho do primeiro mês à adolescência. Os testes do pezinho, da orelhinha e da linguinha são feitos aqui. Se precisar de exame ou de dentista, a recepção tenta marcar no mesmo dia.",
+  "resposta_rapida": "A pediatria da EmCORR atende do nascimento aos 18 anos. Cobre a consulta de rotina do bebê (puericultura, o acompanhamento do crescimento), a criança doente e o check-up escolar. Não precisa de encaminhamento. Atendemos particular, Medplan, Humana Saúde e Camed.",
+  "como_e_a_consulta": "O pediatra começa ouvindo você. Pergunta como a criança come, dorme e se desenvolve, e o que mudou desde a última consulta. Depois vem o exame físico: peso, altura e, no bebê, a medida da cabeça. Tudo vai para a curva de crescimento, o gráfico que compara seu filho com crianças da mesma idade. No fim, você sai sabendo o que observar em casa e quando voltar. Traga a caderneta de saúde da criança, com as vacinas, e os exames anteriores.",
+  "quando_procurar": [
+   "Consultas de rotina do bebê, mais frequentes no primeiro ano.",
+   "Febre, tosse, diarreia ou vômito que passam de um ou dois dias.",
+   "Dúvidas sobre amamentação, comida, sono ou peso.",
+   "Demora para sentar, andar ou falar, ou mudança de comportamento na escola.",
+   "Check-up antes de esporte, viagem ou início do ano escolar.",
+   "Criança com dificuldade para respirar, muito sonolenta ou com convulsão deve ir direto ao pronto-socorro."
+  ],
+  "quem_atende": [],
+  "exames_relacionados": [
+   "teste-do-pezinho",
+   "teste-da-orelhinha",
+   "teste-da-linguinha",
+   "exames-laboratoriais",
+   "imitanciometria",
+   "ultrassonografia"
+  ],
+  "especialidades_relacionadas": [
+   "odontopediatria",
+   "fonoaudiologia",
+   "nutricao"
+  ],
+  "convenios": "padrao",
+  "faqs": [
+   {
+    "p": "A partir de que idade o pediatra atende?",
+    "r": "Do nascimento aos 18 anos. A primeira consulta do bebê costuma ser na primeira semana depois da alta da maternidade."
+   },
+   {
+    "p": "O que levar na consulta?",
+    "r": "A caderneta de saúde da criança e o documento com foto do responsável. Traga também a carteirinha do convênio e exames ou receitas anteriores."
+   },
+   {
+    "p": "Como funciona o retorno?",
+    "r": "A regra de retorno muda entre particular e cada convênio. A recepção informa no momento do agendamento."
+   },
+   {
+    "p": "Dá para fazer consulta, exame e dentista no mesmo dia?",
+    "r": "Muitas vezes, sim. Avise no WhatsApp que quer juntar os atendimentos, e a recepção procura horários em sequência."
+   },
+   {
+    "p": "Meu filho está com febre. Consigo horário hoje?",
+    "r": "Chame a recepção no WhatsApp e peça o horário mais próximo. Se a criança estiver com dificuldade para respirar ou muito abatida, vá ao pronto-socorro."
+   }
+  ],
+  "cta_texto": "Agendar pelo WhatsApp",
+  "whatsapp_numero": "consultas",
+  "whatsapp_mensagem": "Olá, quero agendar consulta de pediatria para meu filho(a). Quais os próximos horários? [site-ped]"
+ },
+ {
+  "tipo_registro": "specialty",
+  "slug": "cardiologia",
+  "nome": "Cardiologia",
+  "grupo": "medica",
+  "ordem": 2,
+  "ativo": true,
+  "seo_title": "Cardiologista em Corrente-PI | EmCORR",
+  "seo_description": "Consulta com cardiologista e exames do coração (eletro, eco, Holter e MAPA) no mesmo endereço em Corrente-PI. Agende pelo WhatsApp.",
+  "h1": "Cardiologista em Corrente-PI",
+  "subtitulo": "Consulta e exames do coração no mesmo endereço, aqui em Corrente.",
+  "resumo": "Consulta com cardiologista e eletrocardiograma, ecocardiograma, Holter e MAPA sem sair da clínica.",
+  "beneficio_abertura": "Pressão alta e alteração no ritmo do coração muitas vezes não dão sinal. A consulta com a cardiologista acontece aqui, e os exames que ela pedir também: eletrocardiograma, ecocardiograma, Holter e MAPA.",
+  "resposta_rapida": "A cardiologia da EmCORR atende adultos e idosos. Os motivos mais comuns são check-up, pressão alta, palpitação, colesterol e avaliação antes de cirurgia. Não precisa de encaminhamento. Atendemos particular, Medplan, Humana Saúde e Camed.",
+  "como_e_a_consulta": "A consulta começa pela conversa: sintomas, remédios em uso, doenças na família e hábitos. Depois a médica mede a pressão e escuta o coração. O eletrocardiograma pode ser feito no mesmo dia. Se ela pedir outros exames, a recepção agenda aqui mesmo. No retorno, a médica explica os resultados e combina o acompanhamento. Traga a lista de remédios e os exames antigos, mesmo os feitos em outro lugar.",
+  "quando_procurar": [
+   "Pressão alta, ou medidas de pressão que variam muito.",
+   "Palpitação, ou sensação de coração acelerado ou falhando.",
+   "Cansaço ou falta de ar em esforços que antes você fazia sem dificuldade.",
+   "Pernas inchadas no fim do dia.",
+   "Colesterol ou glicose alterados, diabetes, obesidade ou doença do coração na família.",
+   "Avaliação antes de cirurgia (risco cirúrgico) ou antes de começar atividade física.",
+   "Dor no peito forte ou que não passa pede pronto-socorro, sem esperar consulta."
+  ],
+  "quem_atende": [
+   "ludmilla-nery"
+  ],
+  "exames_relacionados": [
+   "eletrocardiograma",
+   "ecocardiograma",
+   "holter-24-horas",
+   "mapa-24-horas",
+   "doppler-de-carotidas",
+   "exames-laboratoriais"
+  ],
+  "especialidades_relacionadas": [
+   "endocrinologia",
+   "nutricao"
+  ],
+  "convenios": "padrao",
+  "faqs": [
+   {
+    "p": "Preciso levar exames antigos?",
+    "r": "Sim, se tiver. Exames de sangue, eletrocardiogramas e laudos anteriores ajudam a médica a comparar e evitam repetir exame. Traga também a lista dos remédios que você usa."
+   },
+   {
+    "p": "O eletrocardiograma é feito no dia da consulta?",
+    "r": "Muitas vezes, sim, porque o exame é rápido. Ecocardiograma, Holter e MAPA têm horário próprio, também aqui na EmCORR."
+   },
+   {
+    "p": "Precisa de jejum para a consulta?",
+    "r": "Não. Se a médica pedir exame de sangue, a recepção explica o preparo de cada um."
+   },
+   {
+    "p": "Faz avaliação de risco cirúrgico?",
+    "r": "Sim. Traga o pedido do cirurgião e os exames que já tiver. A avaliação costuma incluir consulta e eletrocardiograma. Outros exames dependem do caso."
+   },
+   {
+    "p": "Em que dias a cardiologista atende?",
+    "r": "Os dias aparecem no quadro da profissional, nesta página. A recepção confirma os horários da semana pelo WhatsApp."
+   }
+  ],
+  "cta_texto": "Agendar pelo WhatsApp",
+  "whatsapp_numero": "consultas",
+  "whatsapp_mensagem": "Olá, quero agendar consulta com a cardiologista. Quais os horários disponíveis? [site-card]"
+ },
+ {
+  "tipo_registro": "specialty",
+  "slug": "endocrinologia",
+  "nome": "Endocrinologia",
+  "grupo": "medica",
+  "ordem": 3,
+  "ativo": true,
+  "seo_title": "Endocrinologista em Corrente-PI | EmCORR",
+  "seo_description": "Tireoide, diabetes, obesidade e outras alterações hormonais: consulta e exames de sangue no mesmo endereço em Corrente-PI. Agende pelo WhatsApp.",
+  "h1": "Endocrinologista em Corrente-PI",
+  "subtitulo": "Tireoide, diabetes e peso acompanhados de perto, com exames de sangue aqui mesmo.",
+  "resumo": "Diabetes, tireoide, obesidade e alterações hormonais, com consulta e coleta de sangue no mesmo endereço.",
+  "beneficio_abertura": "Glicose alterada no exame, cansaço que não passa ou peso que muda sem motivo podem ter relação com os hormônios. A consulta e a coleta de sangue ficam no mesmo endereço, e o resultado sai pela internet.",
+  "resposta_rapida": "A endocrinologia cuida das glândulas que produzem hormônios, como a tireoide e o pâncreas. Na EmCORR, atende diabetes, doenças da tireoide, obesidade e outras alterações hormonais em adultos. Não precisa de encaminhamento. Atendemos particular, Medplan, Humana Saúde e Camed.",
+  "como_e_a_consulta": "A médica pergunta sobre sintomas, alimentação, sono, remédios e doenças na família. Mede peso, cintura e pressão e examina o pescoço, onde fica a tireoide. Em geral, pede exames de sangue, coletados aqui. No retorno, vocês combinam o tratamento e a frequência das consultas. Quem tem diabetes deve trazer as anotações de glicemia (o açúcar no sangue) e os últimos exames.",
+  "quando_procurar": [
+   "Diabetes, ou glicose alterada em exame de rotina.",
+   "Nódulo na tireoide, ou TSH (o exame de sangue da tireoide) fora do normal.",
+   "Ganho ou perda de peso sem motivo claro.",
+   "Cansaço, queda de cabelo, intestino preso ou frio fora do comum.",
+   "Menstruação irregular, excesso de pelos ou dificuldade para engravidar ligada a hormônios.",
+   "Colesterol alto, em acompanhamento com a cardiologia e a nutrição."
+  ],
+  "quem_atende": [
+   "thalma-muniz"
+  ],
+  "exames_relacionados": [
+   "exames-laboratoriais",
+   "ultrassonografia"
+  ],
+  "especialidades_relacionadas": [
+   "nutricao",
+   "cardiologia"
+  ],
+  "convenios": "padrao",
+  "faqs": [
+   {
+    "p": "Preciso de jejum para a consulta?",
+    "r": "Para a consulta, não. Alguns exames de sangue, como a glicemia, pedem jejum. A recepção explica o preparo de cada um."
+   },
+   {
+    "p": "O que levar na primeira consulta?",
+    "r": "Exames de sangue recentes, laudos de ultrassom da tireoide e a lista de remédios. Quem tem diabetes traz as anotações de glicemia ou o aparelho de medir."
+   },
+   {
+    "p": "A endocrinologista trata obesidade?",
+    "r": "Sim. Ela investiga se há causa hormonal e trata a obesidade como condição de saúde, junto com alimentação e atividade física. O plano é individual, e a resposta ao tratamento muda de pessoa para pessoa."
+   },
+   {
+    "p": "O ultrassom da tireoide é feito aqui?",
+    "r": "A EmCORR faz ultrassonografia. Mande a foto do pedido pelo WhatsApp, e a recepção confirma o horário para o tipo de ultrassom pedido."
+   }
+  ],
+  "cta_texto": "Agendar pelo WhatsApp",
+  "whatsapp_numero": "consultas",
+  "whatsapp_mensagem": "Olá, quero agendar consulta de endocrinologia. Quais os próximos horários? [site-endo]"
+ },
+ {
+  "tipo_registro": "specialty",
+  "slug": "neurologia",
+  "nome": "Neurologia",
+  "grupo": "medica",
+  "ordem": 4,
+  "ativo": true,
+  "seo_title": "Neurologista em Corrente-PI | EmCORR",
+  "seo_description": "Dor de cabeça frequente, tontura, formigamento e memória: consulta com neurologista e tomografia no mesmo endereço em Corrente-PI.",
+  "h1": "Neurologista em Corrente-PI",
+  "subtitulo": "Dor de cabeça, tontura e formigamento avaliados, com tomografia no mesmo endereço.",
+  "resumo": "Dor de cabeça frequente, tontura, formigamento e esquecimento, com tomografia aqui mesmo.",
+  "beneficio_abertura": "Dor de cabeça que volta sempre, tontura e formigamento atrapalham a rotina. O neurologista procura a causa e planeja o cuidado. Se ele pedir tomografia, você faz aqui, sem viajar.",
+  "resposta_rapida": "O neurologista cuida do cérebro, da medula e dos nervos. Na EmCORR, atende adultos com dor de cabeça frequente, tontura, formigamento, esquecimento, tremor e convulsão. Não precisa de encaminhamento. Atendemos particular, Medplan, Humana Saúde e Camed.",
+  "como_e_a_consulta": "O médico pergunta quando os sintomas começaram, como são e o que melhora ou piora. Depois faz o exame neurológico: testa força, reflexos, equilíbrio, coordenação e sensibilidade. Se precisar, pede tomografia ou exames de sangue, feitos aqui. Antes da consulta, anote os dias e horários das crises. Isso ajuda o médico.",
+  "quando_procurar": [
+   "Dor de cabeça que se repete ou que mudou de padrão.",
+   "Tontura ou desequilíbrio frequentes.",
+   "Formigamento, dormência ou perda de força em braço ou perna.",
+   "Esquecimento que atrapalha a rotina, em você ou em alguém da família.",
+   "Tremor, desmaio ou convulsão já atendidos no pronto-socorro e que precisam de acompanhamento.",
+   "Fraqueza de repente em um lado do corpo, boca torta ou fala enrolada pedem pronto-socorro na hora."
+  ],
+  "quem_atende": [],
+  "exames_relacionados": [
+   "tomografia-computadorizada",
+   "doppler-de-carotidas",
+   "exames-laboratoriais"
+  ],
+  "especialidades_relacionadas": [
+   "psiquiatria",
+   "cardiologia"
+  ],
+  "convenios": "padrao",
+  "faqs": [
+   {
+    "p": "O neurologista trata enxaqueca?",
+    "r": "Sim. Ele identifica o tipo de dor de cabeça e orienta o tratamento das crises. Quando indicado, também trata para prevenir novas crises."
+   },
+   {
+    "p": "Preciso levar exames?",
+    "r": "Traga exames de imagem anteriores com o laudo e, se tiver, o CD ou o link. Traga também exames de sangue e a lista de remédios."
+   },
+   {
+    "p": "A tomografia pode ser feita aqui?",
+    "r": "Sim. A EmCORR tem tomógrafo próprio. Com o pedido médico, a recepção agenda o exame."
+   },
+   {
+    "p": "Em que dias o neurologista atende?",
+    "r": "Os dias aparecem no quadro do profissional, nesta página. A recepção confirma os horários pelo WhatsApp."
+   }
+  ],
+  "cta_texto": "Agendar pelo WhatsApp",
+  "whatsapp_numero": "consultas",
+  "whatsapp_mensagem": "Olá, quero agendar consulta de neurologia. Quais os horários disponíveis? [site-neuro]"
+ },
+ {
+  "tipo_registro": "specialty",
+  "slug": "psiquiatria",
+  "nome": "Psiquiatria",
+  "grupo": "medica",
+  "ordem": 5,
+  "ativo": true,
+  "seo_title": "Psiquiatra em Corrente-PI | EmCORR",
+  "seo_description": "Ansiedade, depressão e insônia: consulta com psiquiatra em sala reservada e com sigilo, em Corrente-PI. Psicologia no mesmo endereço.",
+  "h1": "Psiquiatra em Corrente-PI",
+  "subtitulo": "Ansiedade, humor e sono tratados com sigilo, com psicologia no mesmo endereço.",
+  "resumo": "Ansiedade, depressão, insônia e mudanças de humor, com consulta sigilosa e psicologia na mesma clínica.",
+  "beneficio_abertura": "Tristeza que não passa, ansiedade que tira o sono e mudanças fortes de humor têm tratamento. A consulta é sigilosa. Quando faz sentido, o psiquiatra trabalha junto com a psicologia, que atende no mesmo endereço.",
+  "resposta_rapida": "O psiquiatra é o médico da saúde mental. Trata ansiedade, depressão, insônia, transtorno bipolar e outras condições. Na EmCORR, a consulta é sigilosa e pode ser combinada com psicoterapia. Não precisa de encaminhamento. Atendemos particular, Medplan, Humana Saúde e Camed.",
+  "como_e_a_consulta": "O psiquiatra ouve o que você sente, desde quando e como isso afeta a rotina. A primeira consulta costuma ser mais longa. Às vezes ele pede exame de sangue para descartar outras causas. Depois explica as opções: remédio, psicoterapia ou os dois, com retornos para ajustar. O que você conta fica em sigilo.",
+  "quando_procurar": [
+   "Tristeza, desânimo ou falta de prazer nas coisas por mais de duas semanas.",
+   "Ansiedade, preocupação ou crises de medo que atrapalham trabalho, estudo ou família.",
+   "Insônia, ou sono em excesso, que não melhora.",
+   "Mudanças bruscas de humor ou de comportamento.",
+   "Uso de álcool ou de outras substâncias fora de controle.",
+   "Pensa em se machucar ou em tirar a própria vida? Ligue 188 (CVV, 24 horas, gratuito) ou vá ao pronto-socorro agora."
+  ],
+  "quem_atende": [],
+  "exames_relacionados": [
+   "exames-laboratoriais"
+  ],
+  "especialidades_relacionadas": [
+   "psicologia",
+   "neurologia"
+  ],
+  "convenios": "padrao",
+  "faqs": [
+   {
+    "p": "Qual a diferença entre psicólogo e psiquiatra?",
+    "r": "O psiquiatra é médico: faz o diagnóstico e pode receitar remédio. O psicólogo faz psicoterapia, com sessões de conversa ao longo do tempo. Muitas vezes os dois trabalham juntos. Na dúvida, a recepção ajuda a escolher por onde começar."
+   },
+   {
+    "p": "A consulta é sigilosa?",
+    "r": "Sim. O sigilo é dever ético do médico. O que você conta não é compartilhado sem sua autorização, salvo nas exceções previstas em lei."
+   },
+   {
+    "p": "Vou tomar remédio para sempre?",
+    "r": "Não necessariamente. O tempo de tratamento depende de cada caso e é revisto nos retornos. Não pare nenhum remédio sem falar com o médico."
+   },
+   {
+    "p": "Menor de idade pode consultar?",
+    "r": "Menores de 18 anos consultam com a presença ou a autorização do responsável. A recepção informa a faixa de idade atendida."
+   },
+   {
+    "p": "E se eu estiver em crise agora?",
+    "r": "Vá ao pronto-socorro mais próximo ou ligue 188 (CVV), que atende 24 horas e de graça. A consulta agendada serve para o acompanhamento."
+   }
+  ],
+  "cta_texto": "Agendar pelo WhatsApp",
+  "whatsapp_numero": "consultas",
+  "whatsapp_mensagem": "Olá, quero informações para agendar consulta de psiquiatria. [site-psiq]"
+ },
+ {
+  "tipo_registro": "specialty",
+  "slug": "cirurgia-geral",
+  "nome": "Cirurgia Geral",
+  "grupo": "medica",
+  "ordem": 6,
+  "ativo": true,
+  "seo_title": "Cirurgião geral em Corrente-PI | EmCORR",
+  "seo_description": "Avaliação de hérnia, pedra na vesícula, cisto e lipoma com cirurgião geral em Corrente-PI. Ultrassom e exames de sangue no mesmo endereço.",
+  "h1": "Cirurgião geral em Corrente-PI",
+  "subtitulo": "Avaliação de hérnia, vesícula e pequenas lesões, com exames aqui mesmo.",
+  "resumo": "Consulta para hérnia, pedra na vesícula, cisto, lipoma e unha encravada, com exames no mesmo endereço.",
+  "beneficio_abertura": "Hérnia, pedra na vesícula ou um caroço na pele levantam a mesma dúvida: precisa operar? A consulta com o cirurgião geral responde a isso. Ultrassom, tomografia e exames de sangue são feitos aqui.",
+  "resposta_rapida": "O cirurgião geral avalia o que pode precisar de cirurgia. Exemplos: hérnia, pedra na vesícula, cisto, lipoma (caroço de gordura sob a pele) e unha encravada. Na EmCORR, a consulta serve para avaliar, pedir exames e planejar o próximo passo. Atendemos particular, Medplan, Humana Saúde e Camed.",
+  "como_e_a_consulta": "O cirurgião pergunta o que você sente, desde quando e que exames já fez. Examina a região e, se precisar, pede ultrassom, tomografia ou exames de sangue, feitos aqui. Com os resultados, explica se há indicação de cirurgia, as alternativas, os riscos e a recuperação. A decisão é tomada com você. O local de cada procedimento é informado na consulta.",
+  "quando_procurar": [
+   "Caroço ou volume na virilha, no umbigo ou em cicatriz antiga, que pode ser hérnia.",
+   "Pedra na vesícula vista no ultrassom, com ou sem dor depois de comer.",
+   "Cisto, lipoma ou pinta que cresceu ou incomoda.",
+   "Unha encravada que volta sempre.",
+   "Dor forte na barriga com febre ou vômito pede pronto-socorro."
+  ],
+  "quem_atende": [],
+  "exames_relacionados": [
+   "ultrassonografia",
+   "tomografia-computadorizada",
+   "exames-laboratoriais",
+   "eletrocardiograma"
+  ],
+  "especialidades_relacionadas": [
+   "cardiologia"
+  ],
+  "convenios": "padrao",
+  "faqs": [
+   {
+    "p": "Toda hérnia precisa de cirurgia?",
+    "r": "Nem sempre. O cirurgião avalia tamanho, sintomas e risco de complicação para indicar o momento da cirurgia ou o acompanhamento."
+   },
+   {
+    "p": "Quais exames levar?",
+    "r": "Ultrassom, tomografia ou exames de sangue que você já tiver. Se não tiver, o médico pede na consulta, e muitos são feitos aqui."
+   },
+   {
+    "p": "Onde a cirurgia é feita?",
+    "r": "Depende do procedimento. O cirurgião explica o local, o preparo e a internação, se houver, na consulta."
+   },
+   {
+    "p": "Preciso de avaliação do coração antes de operar?",
+    "r": "Depende da idade, da saúde e do tipo de cirurgia. Quando for preciso, a consulta com a cardiologista e o eletrocardiograma são feitos aqui."
+   }
+  ],
+  "cta_texto": "Agendar pelo WhatsApp",
+  "whatsapp_numero": "consultas",
+  "whatsapp_mensagem": "Olá, quero agendar consulta de cirurgia geral. Quais os horários disponíveis? [site-cirurgia-geral]"
+ },
+ {
+  "tipo_registro": "specialty",
+  "slug": "otorrinolaringologia",
+  "nome": "Otorrinolaringologia",
+  "grupo": "medica",
+  "ordem": 7,
+  "ativo": true,
+  "seo_title": "Otorrino em Corrente-PI | EmCORR",
+  "seo_description": "Ouvido, nariz e garganta: consulta com otorrino, nasofibroscopia, laringoscopia e exames de audição no mesmo endereço em Corrente-PI.",
+  "h1": "Otorrino em Corrente-PI",
+  "subtitulo": "Ouvido, nariz e garganta, com exames de câmera e de audição aqui mesmo.",
+  "resumo": "Ouvido, nariz e garganta, com nasofibroscopia, laringoscopia e exames de audição no mesmo endereço.",
+  "beneficio_abertura": "Nariz sempre entupido, ronco, otite que volta e rouquidão que não passa são casos para o otorrino. A nasofibroscopia e os exames de audição são feitos aqui, sem viajar.",
+  "resposta_rapida": "O otorrinolaringologista, ou otorrino, cuida do ouvido, do nariz, dos seios da face e da garganta, em crianças e adultos. Na EmCORR, a consulta pode incluir exame com câmera fina e teste de audição. Não precisa de encaminhamento. Atendemos particular, Medplan, Humana Saúde e Camed.",
+  "como_e_a_consulta": "A médica ouve seus sintomas e examina ouvido, nariz e garganta com aparelhos de luz. Para ver mais de perto, pode fazer nasofibroscopia ou laringoscopia: uma câmera fina mostra o nariz, a garganta e as cordas vocais em poucos minutos. Testes de audição e tomografia dos seios da face também são agendados aqui.",
+  "quando_procurar": [
+   "Nariz entupido, espirro ou coriza que duram semanas.",
+   "Ronco alto, respiração pela boca ou sono agitado, em criança ou adulto.",
+   "Dor de ouvido, otite que volta ou ouvido tapado.",
+   "Dificuldade para ouvir, ou zumbido.",
+   "Rouquidão por mais de duas ou três semanas, ou dor de garganta que volta sempre.",
+   "Tontura com sensação de que tudo gira.",
+   "Sinusite que se repete."
+  ],
+  "quem_atende": [
+   "osyanne-timoteo"
+  ],
+  "exames_relacionados": [
+   "nasofibroscopia",
+   "laringoscopia",
+   "audiometria",
+   "imitanciometria",
+   "tomografia-computadorizada"
+  ],
+  "especialidades_relacionadas": [
+   "fonoaudiologia",
+   "pediatria"
+  ],
+  "convenios": "padrao",
+  "faqs": [
+   {
+    "p": "O otorrino atende crianças?",
+    "r": "Sim. Ronco, otite, amígdala e adenoide (uma carne esponjosa no fundo do nariz) são motivos comuns de consulta na infância."
+   },
+   {
+    "p": "A nasofibroscopia é feita na hora da consulta?",
+    "r": "Pode ser, se a médica achar necessário. O exame é rápido e feito no consultório. Pergunte à recepção se o seu convênio cobre o exame no mesmo dia."
+   },
+   {
+    "p": "Posso fazer audiometria aqui?",
+    "r": "Sim. Audiometria e imitanciometria são agendadas na EmCORR, com o pedido médico."
+   },
+   {
+    "p": "Rouquidão é sinal de algo grave?",
+    "r": "Na maioria das vezes, não. Gripe, uso excessivo da voz e refluxo são causas comuns. Rouquidão que passa de duas ou três semanas merece consulta com o otorrino."
+   }
+  ],
+  "cta_texto": "Agendar pelo WhatsApp",
+  "whatsapp_numero": "consultas",
+  "whatsapp_mensagem": "Olá, quero agendar consulta de otorrino. Quais os horários disponíveis? [site-otorrino]"
+ },
+ {
+  "tipo_registro": "specialty",
+  "slug": "ortopedia",
+  "nome": "Ortopedia e Traumatologia",
+  "grupo": "medica",
+  "ordem": 8,
+  "ativo": true,
+  "seo_title": "Ortopedista em Corrente-PI | EmCORR",
+  "seo_description": "Dor nas costas, no joelho ou no ombro, entorse e fratura: consulta com ortopedista e raio-X no mesmo endereço em Corrente-PI.",
+  "h1": "Ortopedista em Corrente-PI",
+  "subtitulo": "Dor nas articulações e lesões avaliadas, com raio-X no mesmo endereço.",
+  "resumo": "Dor na coluna, no joelho ou no ombro, entorse e fratura, com raio-X e tomografia aqui mesmo.",
+  "beneficio_abertura": "Dor nas costas, no joelho ou no ombro limita o trabalho e o sono. O ortopedista procura a causa. Se ele pedir raio-X ou tomografia, você faz aqui, muitas vezes no mesmo dia.",
+  "resposta_rapida": "O ortopedista cuida de ossos, articulações, músculos e tendões. Na EmCORR, atende dor na coluna e nas articulações, entorse, fratura e lesão do esporte. Não precisa de encaminhamento. Atendemos particular, Medplan, Humana Saúde e Camed.",
+  "como_e_a_consulta": "O médico pergunta como a dor começou e o que piora ou melhora. Examina movimento, força e pontos de dor. Se precisar, pede raio-X, ultrassom ou tomografia, feitos aqui. Com o resultado, explica o que está acontecendo e as opções de tratamento: remédio, fisioterapia ou outros cuidados.",
+  "quando_procurar": [
+   "Dor nas costas ou no pescoço que dura mais de algumas semanas.",
+   "Dor, inchaço ou estalo no joelho, ombro, quadril ou tornozelo.",
+   "Entorse ou queda com dor que não melhora em poucos dias.",
+   "Formigamento que desce para braço ou perna.",
+   "Acompanhamento depois de fratura ou de cirurgia ortopédica.",
+   "Suspeita de fratura com osso fora do lugar ou dor muito forte pede pronto-socorro."
+  ],
+  "quem_atende": [
+   "danilo-lustosa"
+  ],
+  "exames_relacionados": [
+   "raio-x",
+   "tomografia-computadorizada",
+   "ultrassonografia"
+  ],
+  "especialidades_relacionadas": [
+   "fisioterapia"
+  ],
+  "convenios": "padrao",
+  "faqs": [
+   {
+    "p": "O raio-X é feito no dia da consulta?",
+    "r": "Muitas vezes, sim. O raio-X é feito aqui. Peça à recepção para marcar o exame logo depois da consulta."
+   },
+   {
+    "p": "Preciso levar exames antigos?",
+    "r": "Sim, se tiver. Raio-X, ressonância ou tomografia anteriores, com laudo, ajudam a comparar e evitam repetir exame."
+   },
+   {
+    "p": "O ortopedista encaminha para fisioterapia?",
+    "r": "Quando indicado, sim. A fisioterapia atende no mesmo endereço."
+   },
+   {
+    "p": "Atende crianças?",
+    "r": "A recepção informa a faixa de idade atendida. Mande a idade da criança e a queixa pelo WhatsApp."
+   }
+  ],
+  "cta_texto": "Agendar pelo WhatsApp",
+  "whatsapp_numero": "consultas",
+  "whatsapp_mensagem": "Olá, quero agendar consulta de ortopedia. Quais os horários disponíveis? [site-ortopedia]"
+ },
+ {
+  "tipo_registro": "specialty",
+  "slug": "odontologia",
+  "nome": "Odontologia",
+  "grupo": "odontologica",
+  "ordem": 9,
+  "ativo": true,
+  "seo_title": "Dentista em Corrente-PI | EmCORR",
+  "seo_description": "Dentista para toda a família em Corrente-PI, com raio-X panorâmico e tomografia odontológica no mesmo endereço. Agende a avaliação.",
+  "h1": "Dentista em Corrente-PI",
+  "subtitulo": "Dentista para toda a família, no mesmo endereço das consultas médicas.",
+  "resumo": "Avaliação, limpeza e tratamento para toda a família, com raio-X panorâmico e tomografia odontológica aqui mesmo.",
+  "beneficio_abertura": "A família inteira consulta o dentista no mesmo endereço do médico. Se o dentista pedir raio-X panorâmico ou tomografia odontológica, o exame é feito aqui.",
+  "resposta_rapida": "A odontologia da EmCORR atende crianças, adultos e idosos. O atendimento é feito por cirurgiões-dentistas com registro no CRO-PI. A primeira consulta é uma avaliação, e o plano de tratamento sai dela.",
+  "como_e_a_consulta": "Na avaliação, o dentista ouve sua queixa e examina dentes e gengiva. Se precisar, pede um raio-X panorâmico, feito aqui. Depois apresenta o plano de tratamento, explica cada etapa e responde suas dúvidas antes de começar. As sessões seguintes são marcadas conforme o plano.",
+  "quando_procurar": [
+   "Avaliação e limpeza de rotina, em geral a cada seis meses ou como o dentista orientar.",
+   "Dor de dente, ou sensibilidade ao frio ou ao doce.",
+   "Gengiva que sangra ao escovar, ou mau hálito que não passa.",
+   "Dente quebrado, restauração que caiu ou prótese que incomoda.",
+   "Planejamento de implante ou de prótese."
+  ],
+  "quem_atende": [
+   "igor-rafael",
+   "mariana-vargas"
+  ],
+  "exames_relacionados": [
+   "raio-x-panoramico",
+   "tomografia-odontologica"
+  ],
+  "especialidades_relacionadas": [
+   "ortodontia",
+   "odontopediatria"
+  ],
+  "convenios": "padrao",
+  "faqs": [
+   {
+    "p": "Como pago a avaliação?",
+    "r": "A recepção informa valores e formas de pagamento pelo WhatsApp. Pelas regras do CFO, o site não publica preço."
+   },
+   {
+    "p": "Quais tratamentos vocês fazem?",
+    "r": "O dentista indica o tratamento depois da avaliação. Mande sua dúvida pelo WhatsApp, e a recepção diz qual profissional atende o seu caso."
+   },
+   {
+    "p": "O raio-X panorâmico é feito aqui?",
+    "r": "Sim. O raio-X panorâmico e a tomografia odontológica são feitos na EmCORR, com o pedido do dentista."
+   },
+   {
+    "p": "Dá para marcar a família inteira no mesmo dia?",
+    "r": "Muitas vezes, sim. Diga à recepção quantas pessoas são, e ela procura horários em sequência."
+   }
+  ],
+  "cta_texto": "Agendar pelo WhatsApp",
+  "whatsapp_numero": "consultas",
+  "whatsapp_mensagem": "Olá, quero agendar uma avaliação com dentista. Quais os horários? [site-odonto]"
+ },
+ {
+  "tipo_registro": "specialty",
+  "slug": "ortodontia",
+  "nome": "Ortodontia",
+  "grupo": "odontologica",
+  "ordem": 10,
+  "ativo": true,
+  "seo_title": "Ortodontista em Corrente-PI: aparelho | EmCORR",
+  "seo_description": "Aparelho ortodôntico para crianças e adultos, com raio-X panorâmico e tomografia odontológica no mesmo endereço em Corrente-PI.",
+  "h1": "Ortodontista em Corrente-PI",
+  "subtitulo": "Aparelho para crianças e adultos, com os exames de planejamento aqui mesmo.",
+  "resumo": "Aparelho para crianças e adultos, com raio-X panorâmico e tomografia odontológica no mesmo endereço.",
+  "beneficio_abertura": "Dente torto e mordida fora do encaixe atrapalham a mastigação e a limpeza dos dentes. O tratamento com aparelho começa por uma avaliação. Os exames de planejamento são feitos aqui.",
+  "resposta_rapida": "A ortodontia corrige a posição dos dentes e o encaixe da mordida com aparelho. Na EmCORR, atende crianças, adolescentes e adultos, com raio-X panorâmico e tomografia odontológica no local. O tempo de tratamento muda de pessoa para pessoa e é explicado na avaliação.",
+  "como_e_a_consulta": "Na avaliação, o dentista examina dentes, mordida e rosto e pergunta o que incomoda. Para planejar, costuma pedir a documentação ortodôntica: raio-X panorâmico, fotos e, em alguns casos, tomografia odontológica, feitos aqui. Depois apresenta o aparelho indicado e o tempo estimado. Explica também as manutenções, que são as consultas de ajuste do aparelho.",
+  "quando_procurar": [
+   "Dentes tortos, encavalados ou com espaços.",
+   "Dentes de cima muito à frente ou atrás dos de baixo.",
+   "Dificuldade para mastigar ou morder, ou mandíbula que estala.",
+   "Criança que respira pela boca, chupa o dedo ou usa chupeta por muito tempo.",
+   "Avaliação preventiva da criança, que muitos dentistas indicam por volta dos 7 anos."
+  ],
+  "quem_atende": [
+   "igor-rafael"
+  ],
+  "exames_relacionados": [
+   "raio-x-panoramico",
+   "tomografia-odontologica"
+  ],
+  "especialidades_relacionadas": [
+   "odontologia",
+   "odontopediatria",
+   "fonoaudiologia"
+  ],
+  "convenios": "padrao",
+  "faqs": [
+   {
+    "p": "Com que idade pode colocar aparelho?",
+    "r": "Não há idade única. Algumas correções começam na infância, outras na adolescência, e adulto também usa aparelho. A avaliação mostra o momento de cada caso."
+   },
+   {
+    "p": "Quanto tempo dura o tratamento?",
+    "r": "Depende do caso e é informado na avaliação. Ir às manutenções e cuidar da escovação ajudam o tratamento a seguir o plano."
+   },
+   {
+    "p": "Quais exames faço antes?",
+    "r": "Em geral, raio-X panorâmico e fotos. Em alguns casos, tomografia odontológica. Todos são feitos aqui na EmCORR."
+   },
+   {
+    "p": "Como funciona o pagamento?",
+    "r": "A recepção informa valores e formas de pagamento pelo WhatsApp. Pelas regras do CFO, o site não publica preço nem promoção."
+   }
+  ],
+  "cta_texto": "Agendar avaliação pelo WhatsApp",
+  "whatsapp_numero": "consultas",
+  "whatsapp_mensagem": "Olá, quero agendar avaliação para aparelho ortodôntico. Quais os horários? [site-orto]"
+ },
+ {
+  "tipo_registro": "specialty",
+  "slug": "odontopediatria",
+  "nome": "Odontopediatria",
+  "grupo": "odontologica",
+  "ordem": 11,
+  "ativo": true,
+  "seo_title": "Dentista infantil em Corrente-PI | EmCORR",
+  "seo_description": "Primeira consulta do bebê no dentista, prevenção de cárie e tratamento dos dentes de leite em Corrente-PI. Pediatra no mesmo endereço.",
+  "h1": "Dentista infantil em Corrente-PI",
+  "subtitulo": "A primeira visita ao dentista, no ritmo da criança.",
+  "resumo": "Primeira consulta do bebê, prevenção de cárie e tratamento dos dentes de leite, com pediatra no mesmo endereço.",
+  "beneficio_abertura": "A primeira consulta no dentista é indicada quando nasce o primeiro dente. A criança conhece o consultório antes do exame. A consulta pode ficar no mesmo dia da consulta com o pediatra.",
+  "resposta_rapida": "O atendimento odontológico infantil cuida dos dentes de bebês, crianças e adolescentes. Inclui a primeira consulta do bebê, orientação de escovação e alimentação e o tratamento de cárie nos dentes de leite. A primeira visita é indicada quando nasce o primeiro dente, ou até 1 ano de idade.",
+  "como_e_a_consulta": "A consulta começa com uma conversa com os pais sobre alimentação, mamadeira, chupeta e escovação. A criança vê o consultório e os instrumentos antes do exame. O dentista examina dentes e gengiva, mostra como escovar e, se precisar, planeja o tratamento. Os pais ficam junto durante o atendimento.",
+  "quando_procurar": [
+   "Quando nasce o primeiro dente, ou até o primeiro aniversário.",
+   "Manchas brancas ou escuras nos dentes de leite.",
+   "Dor ao mastigar ou ao escovar, ou gengiva inchada.",
+   "Queda ou batida no dente.",
+   "Chupeta por muito tempo ou hábito de chupar o dedo."
+  ],
+  "quem_atende": [
+   "mariana-vargas",
+   "igor-rafael"
+  ],
+  "exames_relacionados": [
+   "raio-x-panoramico"
+  ],
+  "especialidades_relacionadas": [
+   "pediatria",
+   "odontologia",
+   "ortodontia"
+  ],
+  "convenios": "padrao",
+  "faqs": [
+   {
+    "p": "Com quantos anos levar a criança ao dentista?",
+    "r": "Quando nasce o primeiro dente, ou até 1 ano. Começar cedo ajuda a prevenir cárie e acostuma a criança com o consultório."
+   },
+   {
+    "p": "Dente de leite precisa de tratamento se vai cair?",
+    "r": "Sim. Dente de leite com cárie pode doer, infeccionar e atrapalhar a mastigação e a posição dos dentes permanentes."
+   },
+   {
+    "p": "E se meu filho chorar ou tiver medo?",
+    "r": "Acontece com muitas crianças. O dentista vai no ritmo dela, e os pais ficam junto."
+   },
+   {
+    "p": "Dá para marcar junto com o pediatra?",
+    "r": "Muitas vezes, sim. Peça à recepção para marcar os dois horários no mesmo dia."
+   }
+  ],
+  "cta_texto": "Agendar pelo WhatsApp",
+  "whatsapp_numero": "consultas",
+  "whatsapp_mensagem": "Olá, quero agendar dentista para meu filho(a). Quais os horários? [site-odontoped]"
+ },
+ {
+  "tipo_registro": "specialty",
+  "slug": "nutricao",
+  "nome": "Nutrição",
+  "grupo": "multiprofissional",
+  "ordem": 12,
+  "ativo": true,
+  "seo_title": "Nutricionista em Corrente-PI | EmCORR",
+  "seo_description": "Plano alimentar para perder peso, controlar diabetes e colesterol, na gestação ou para crianças, com nutricionista em Corrente-PI.",
+  "h1": "Nutricionista em Corrente-PI",
+  "subtitulo": "Um plano alimentar montado para a sua rotina.",
+  "resumo": "Plano alimentar para perder peso, controlar diabetes e colesterol, na gestação e na infância.",
+  "beneficio_abertura": "A nutricionista monta com você um plano alimentar que cabe na sua rotina e no seu orçamento. Quando for o caso, acompanha junto com a endocrinologia e a cardiologia, que atendem no mesmo endereço.",
+  "resposta_rapida": "A nutricionista orienta a alimentação para prevenir e controlar condições de saúde e para fases como gestação e infância. Na EmCORR, atende quem quer perder ou ganhar peso, controlar diabetes, colesterol ou pressão, ou mudar hábitos. Não precisa de encaminhamento.",
+  "como_e_a_consulta": "Na primeira consulta, a nutricionista pergunta sobre sua rotina, o que você come, horários, trabalho, sono e objetivo. Mede peso, altura e circunferências e, se você tiver, avalia seus exames de sangue. Com isso, monta um plano alimentar individual e explica como seguir no dia a dia. Nos retornos, vocês ajustam o plano.",
+  "quando_procurar": [
+   "Vontade de perder ou ganhar peso com orientação.",
+   "Diabetes, pré-diabetes, colesterol ou triglicerídeos altos.",
+   "Pressão alta, gordura no fígado ou intestino desregulado.",
+   "Gestação e amamentação.",
+   "Criança que come pouco, recusa muitos alimentos ou está acima do peso.",
+   "Alergia ou intolerância alimentar já diagnosticada."
+  ],
+  "quem_atende": [],
+  "exames_relacionados": [
+   "exames-laboratoriais"
+  ],
+  "especialidades_relacionadas": [
+   "endocrinologia",
+   "cardiologia",
+   "pediatria"
+  ],
+  "convenios": "padrao",
+  "faqs": [
+   {
+    "p": "A nutricionista passa cardápio?",
+    "r": "Sim. O plano alimentar é feito para você, com opções de refeição e de substituição."
+   },
+   {
+    "p": "Preciso levar exames?",
+    "r": "Se tiver exames de sangue recentes, traga. Eles ajudam a ajustar o plano. Se precisar de novos, a coleta é feita aqui."
+   },
+   {
+    "p": "De quanto em quanto tempo são os retornos?",
+    "r": "Depende do objetivo. Os primeiros retornos costumam ser mais próximos, para ajustar o plano. A nutricionista combina com você."
+   }
+  ],
+  "cta_texto": "Agendar pelo WhatsApp",
+  "whatsapp_numero": "consultas",
+  "whatsapp_mensagem": "Olá, quero agendar consulta com nutricionista. Quais os horários? [site-nutricao]"
+ },
+ {
+  "tipo_registro": "specialty",
+  "slug": "psicologia",
+  "nome": "Psicologia",
+  "grupo": "multiprofissional",
+  "ordem": 13,
+  "ativo": true,
+  "seo_title": "Psicólogo em Corrente-PI | EmCORR",
+  "seo_description": "Psicoterapia para ansiedade, tristeza, luto e relacionamentos, em sala reservada e com sigilo, em Corrente-PI. Agende a primeira sessão.",
+  "h1": "Psicólogo em Corrente-PI",
+  "subtitulo": "Psicoterapia em sala reservada, com sigilo.",
+  "resumo": "Psicoterapia para ansiedade, tristeza, luto e relacionamentos, em sala reservada e com sigilo.",
+  "beneficio_abertura": "A psicoterapia é um espaço para falar do que pesa e entender o que você sente. As sessões acontecem em sala reservada, com sigilo. Se for útil, a psicóloga indica avaliação com a psiquiatria, no mesmo endereço.",
+  "resposta_rapida": "A psicologia da EmCORR faz psicoterapia para ansiedade, tristeza, luto, estresse, autoestima e conflitos de relacionamento. As sessões são sigilosas e acontecem em sala reservada. Não precisa de encaminhamento.",
+  "como_e_a_consulta": "A primeira sessão serve para vocês se conhecerem. Você conta o que te trouxe, e a psicóloga explica como funciona o acompanhamento. A frequência das sessões é combinada entre vocês. O tempo total de terapia muda de pessoa para pessoa.",
+  "quando_procurar": [
+   "Ansiedade, preocupação constante ou crises de nervoso.",
+   "Tristeza, desânimo ou vontade de ficar sozinho por muito tempo.",
+   "Luto, separação ou outra mudança difícil.",
+   "Conflitos na família, no casamento ou no trabalho.",
+   "Autoestima baixa ou dificuldade para lidar com cobranças.",
+   "Se você pensa em se machucar, ligue 188 (CVV, 24 horas) ou vá ao pronto-socorro."
+  ],
+  "quem_atende": [
+   "anaeliza-petersen"
+  ],
+  "exames_relacionados": [],
+  "especialidades_relacionadas": [
+   "psiquiatria",
+   "nutricao"
+  ],
+  "convenios": "padrao",
+  "sessao_duracao": {
+   "valor": null,
+   "padrao_referencia": false
+  },
+  "faqs": [
+   {
+    "p": "Como é a primeira sessão?",
+    "r": "É uma conversa para a psicóloga entender o que te trouxe e para você tirar dúvidas sobre o acompanhamento. Não existe resposta certa ou errada."
+   },
+   {
+    "p": "O que eu falo fica em sigilo?",
+    "r": "Sim. O sigilo é dever ético do psicólogo. Nada é compartilhado sem sua autorização, salvo nas exceções previstas no Código de Ética da profissão."
+   },
+   {
+    "p": "Qual a diferença entre psicólogo e psiquiatra?",
+    "r": "O psicólogo faz psicoterapia, com sessões de conversa. O psiquiatra é médico e pode receitar remédio quando necessário. Os dois podem trabalhar juntos."
+   },
+   {
+    "p": "Adolescente pode fazer terapia?",
+    "r": "Sim. Menores de 18 anos precisam da autorização do responsável para começar. O conteúdo das sessões segue em sigilo, dentro das regras do Código de Ética."
+   }
+  ],
+  "cta_texto": "Agendar pelo WhatsApp",
+  "whatsapp_numero": "consultas",
+  "whatsapp_mensagem": "Olá, quero informações para agendar psicoterapia. [site-psi]"
+ },
+ {
+  "tipo_registro": "specialty",
+  "slug": "fonoaudiologia",
+  "nome": "Fonoaudiologia",
+  "grupo": "multiprofissional",
+  "ordem": 14,
+  "ativo": true,
+  "seo_title": "Fonoaudiólogo em Corrente-PI | EmCORR",
+  "seo_description": "Fala, audição, voz e deglutição, com teste da orelhinha, teste da linguinha e audiometria no mesmo endereço em Corrente-PI.",
+  "h1": "Fonoaudiólogo em Corrente-PI",
+  "subtitulo": "Fala, audição, voz e deglutição, do bebê ao idoso.",
+  "resumo": "Fala, audição, voz e deglutição, com testes da orelhinha e da linguinha e audiometria no mesmo endereço.",
+  "beneficio_abertura": "Falar, ouvir e engolir bem pesam na escola, no trabalho e em casa. A fonoaudiologia atende do bebê, com os testes da orelhinha e da linguinha, ao idoso que começou a ouvir menos.",
+  "resposta_rapida": "A fonoaudiologia cuida da fala, da linguagem, da audição, da voz, da mastigação e da deglutição (o ato de engolir). Na EmCORR, atende bebês, crianças, adultos e idosos. Não precisa de encaminhamento para a avaliação.",
+  "como_e_a_consulta": "A fonoaudióloga começa pela queixa e pela história do desenvolvimento. Depois faz testes de fala, de voz ou de audição, conforme o caso. Com base na avaliação, explica o que encontrou e monta um plano de terapia, com sessões e exercícios para casa. Ao longo do tratamento, ela reavalia o plano.",
+  "quando_procurar": [
+   "Criança que fala pouco para a idade, troca letras ou gagueja.",
+   "Bebê com dificuldade para mamar ou suspeita de língua presa.",
+   "Dificuldade para ouvir, zumbido ou pedido de audiometria.",
+   "Rouquidão ou voz cansada em quem usa muito a voz no trabalho, como professores e vendedores.",
+   "Engasgo frequente ou dificuldade para engolir.",
+   "Respiração pela boca ou mastigação alterada."
+  ],
+  "quem_atende": [],
+  "exames_relacionados": [
+   "teste-da-orelhinha",
+   "teste-da-linguinha",
+   "audiometria",
+   "imitanciometria"
+  ],
+  "especialidades_relacionadas": [
+   "otorrinolaringologia",
+   "pediatria",
+   "ortodontia"
+  ],
+  "convenios": "padrao",
+  "faqs": [
+   {
+    "p": "Com que idade levar meu filho ao fonoaudiólogo?",
+    "r": "Em qualquer idade, se houver preocupação. Se a criança fala bem menos que outras da mesma idade, vale marcar a avaliação. O mesmo vale se é difícil entender o que ela diz."
+   },
+   {
+    "p": "Quantas sessões vou precisar?",
+    "r": "Depende da queixa e da evolução. A fonoaudióloga explica o plano na avaliação e revê o número de sessões ao longo do tratamento."
+   },
+   {
+    "p": "Preciso de pedido médico?",
+    "r": "Para a avaliação, não. Alguns convênios pedem encaminhamento para liberar as sessões. Confirme com a recepção."
+   }
+  ],
+  "cta_texto": "Agendar pelo WhatsApp",
+  "whatsapp_numero": "consultas",
+  "whatsapp_mensagem": "Olá, quero agendar avaliação de fonoaudiologia. Quais os horários? [site-fono]"
+ },
+ {
+  "tipo_registro": "specialty",
+  "slug": "fisioterapia",
+  "nome": "Fisioterapia",
+  "grupo": "multiprofissional",
+  "ordem": 15,
+  "ativo": true,
+  "seo_title": "Fisioterapia em Corrente-PI | EmCORR",
+  "seo_description": "Dor nas costas, recuperação de lesão e de cirurgia e reabilitação com fisioterapeuta em Corrente-PI. Ortopedista no mesmo endereço.",
+  "h1": "Fisioterapia em Corrente-PI",
+  "subtitulo": "Exercício, terapia manual e orientação para voltar a se mexer.",
+  "resumo": "Dor nas costas, recuperação de lesão e de cirurgia e reabilitação, com plano de exercícios individual.",
+  "beneficio_abertura": "A fisioterapia trata dor e limitação de movimento com exercício, terapia manual (técnicas feitas com as mãos) e orientação. O plano é montado para o seu caso. O ortopedista atende no mesmo endereço.",
+  "resposta_rapida": "A fisioterapia trata lesões e doenças com movimento, exercício, terapia manual e educação. Na EmCORR, atende dor na coluna e nas articulações, recuperação depois de lesão ou cirurgia e reabilitação em geral. A primeira sessão é uma avaliação.",
+  "como_e_a_consulta": "Na avaliação, o fisioterapeuta pergunta sobre a dor, a rotina e os exames que você já fez. Testa movimento, força e postura. Depois monta um plano de sessões com objetivos definidos. Em cada sessão, você faz exercícios orientados e, quando indicado, recebe terapia manual. Também leva exercícios para casa. Vá com roupa confortável.",
+  "quando_procurar": [
+   "Dor nas costas, no pescoço ou nas articulações que atrapalha a rotina.",
+   "Recuperação depois de entorse, fratura ou cirurgia ortopédica.",
+   "Indicação do ortopedista ou de outro médico.",
+   "Dificuldade de equilíbrio ou para caminhar, principalmente em idosos.",
+   "Dor por postura ou esforço repetitivo no trabalho."
+  ],
+  "quem_atende": [],
+  "exames_relacionados": [
+   "raio-x"
+  ],
+  "especialidades_relacionadas": [
+   "ortopedia"
+  ],
+  "convenios": "padrao",
+  "sessao_duracao": {
+   "valor": null,
+   "padrao_referencia": false
+  },
+  "faqs": [
+   {
+    "p": "Preciso de pedido médico?",
+    "r": "Para a avaliação particular, em geral não. Para usar o convênio, normalmente é preciso pedido médico com o número de sessões. Confirme com a recepção."
+   },
+   {
+    "p": "Quantas sessões vou precisar?",
+    "r": "Depende do caso. O fisioterapeuta define o plano na avaliação e revê o número de sessões conforme a evolução."
+   },
+   {
+    "p": "O que levar na primeira sessão?",
+    "r": "Pedido médico, se tiver, e exames como raio-X ou ressonância. Vá com roupa que deixe a região tratada livre para se mexer."
+   }
+  ],
+  "cta_texto": "Agendar pelo WhatsApp",
+  "whatsapp_numero": "consultas",
+  "whatsapp_mensagem": "Olá, quero agendar fisioterapia. Como funciona e quais os horários? [site-fisio]"
+ }
+]

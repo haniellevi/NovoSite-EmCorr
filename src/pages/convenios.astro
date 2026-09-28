@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import Crumbs from '../components/Crumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Faq from '../components/Faq.astro';
+import Icon from '../components/Icon.astro';
+import { site, wa } from '../data/site';
+const faqs = [
+  { p: 'Meu convênio não está na lista. Posso ser atendido?', r: 'Sim, como particular. Se o seu plano reembolsa, peça o recibo na recepção.' },
+  { p: 'Todo exame é coberto pelo meu plano?', r: 'Depende do plano. Por isso, confirme pelo WhatsApp antes de vir.' },
+  { p: 'Preciso de autorização prévia?', r: 'Alguns exames pedem. A recepção avisa quando for o caso e explica como pedir.' },
+  { p: 'A EmCORR atende pelo SUS?', r: 'Não. Atendemos por convênio e particular.' },
+];
+const ld = [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.p, acceptedAnswer: { '@type': 'Answer', text: f.r } })) }];
+const msg = (c: string) => `Olá, tenho ${c} e quero confirmar a cobertura para um atendimento na EmCORR.`;
+---
+<Base title="Convênios aceitos na EmCORR em Corrente-PI" description="A EmCORR atende Medplan, Humana Saúde, Camed e particular em Corrente-PI. Veja o que levar no dia, como confirmar a cobertura e agende pelo WhatsApp." nav="Convênios" jsonld={ld}>
+  <Crumbs items={[['Início', '/'], ['Convênios']]} />
+  <section class="wrap stack gap-20" style="padding-top:32px;padding-bottom:48px;max-width:980px">
+    <span class="eyebrow">Convênio e particular</span>
+    <h1 class="h1">Convênios aceitos na EmCORR, em <em>Corrente</em></h1>
+    <p class="lead">Medplan, Humana Saúde, Camed e particular. Veja como usar o seu plano e o que levar no dia.</p>
+  </section>
+  <section class="wrap grid g4" style="padding-bottom:88px">
+    {site.convenios.map((c) => (
+      <div class="card stack gap-16" style="padding:32px">
+        <div style="height:64px" class="row"><img src={c.logo} alt={c.nome} width="150" height="60" style="height:56px;width:auto" /></div>
+        <p style="font-size:16px;flex-grow:1">Consultas e exames conforme o seu plano. Mande a carteirinha pelo WhatsApp e a recepção confirma a cobertura antes de você vir.</p>
+        <a class="btn btn-s btn-sm" href={wa(msg(c.nome))}>Confirmar meu convênio</a>
+      </div>
+    ))}
+    <div class="card stack gap-16" style="padding:32px">
+      <div style="height:64px" class="row"><strong style="font:600 26px Poppins;color:var(--ink-900)">Particular</strong></div>
+      <p style="font-size:16px;flex-grow:1">Qualquer consulta ou exame, sem plano. Pergunte o valor pelo WhatsApp antes de marcar.</p>
+      <a class="btn btn-s btn-sm" href={wa('Olá, quero saber o valor particular de um atendimento na EmCORR.')}>Perguntar o valor</a>
+    </div>
+  </section>
+  <section class="bg-cream wrap section stack gap-32">
+    <h2 class="h2">Como usar <em>seu convênio</em></h2>
+    <div class="grid g3" style="gap:20px">
+      {[['Mande uma mensagem', 'Diga o nome do plano e o que você precisa.'], ['A recepção confirma a cobertura', 'Se o plano pedir autorização, ela explica como pedir.'], ['No dia, traga os documentos', 'Carteirinha, documento com foto e o pedido médico, se for exame.']].map(([t, d], i) => <div class="box stack gap-12" style="background:#fff"><span class="ic" style="width:44px;height:44px;font-weight:600;color:var(--red-700)">{i + 1}</span><strong class="h3">{t}</strong><span>{d}</span></div>)}
+    </div>
+  </section>
+  <section class="wrap section split" style="grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);align-items:start">
+    <div class="stack gap-16"><h2 class="h2" style="font-size:34px">O que levar no dia</h2><ul class="checks">{['Carteirinha do convênio (física ou no aplicativo)', 'Documento com foto', 'Pedido médico, se for fazer exame', 'Exames anteriores sobre o mesmo problema, se tiver'].map((t) => <li><Icon name="check" />{t}</li>)}</ul></div>
+    <div class="stack gap-16"><h2 class="h2" style="font-size:34px">Perguntas frequentes</h2><Faq items={faqs} onWhite /></div>
+  </section>
+  <CtaBand titulo="Quer confirmar se o seu plano cobre?" texto="Mande o nome do convênio e o que você precisa. A recepção responde pelo WhatsApp." botao="Confirmar meu convênio" href={wa('Olá, quero confirmar se meu convênio cobre um atendimento na EmCORR.')} />
+</Base>

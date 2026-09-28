@@ -1,0 +1,40 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import Crumbs from '../../components/Crumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { equipe, wa } from '../../data/site';
+import { exame, especialidade, type Rec } from '../../lib';
+
+export function getStaticPaths() {
+  return equipe.map((m) => ({ params: { slug: m.slug }, props: { m } }));
+}
+const { m } = Astro.props as { m: (typeof equipe)[number] };
+const exs = m.exames.map(exame).filter(Boolean) as Rec[];
+const esp = especialidade(m.especialidade);
+const msg = `Olá, quero agendar com ${m.nome} na EmCORR.`;
+const ld = [{ '@context': 'https://schema.org', '@type': m.registro.startsWith('CRO') ? 'Dentist' : 'Physician', name: m.nomeCompleto, identifier: [m.registro, m.rqe].filter(Boolean), worksFor: { '@id': 'https://emcorr.com.br/#clinica' }, image: new URL(m.foto, Astro.site).toString() }];
+const temVideo = m.slug === 'dra-ludmilla-nery';
+---
+<Base title={`${m.nome}, ${m.funcao.split(' · ')[0].toLowerCase()} em Corrente-PI | EmCORR`} description={`${m.funcao.split(' · ')[0]} · ${m.registro}${m.rqe ? ` · ${m.rqe}` : ''}. Atende na EmCORR, em Corrente-PI. Agende pelo WhatsApp.`} nav="Corpo clínico" waMsg={msg} jsonld={ld}>
+  <Crumbs items={[['Início', '/'], ['Corpo clínico', '/corpo-clinico'], [m.nome]]} />
+  <section class="wrap split" style="grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start;padding-top:32px;padding-bottom:72px">
+    <div class="stack gap-16">
+      <img class="photo" src={m.fotoGrande} alt={`${m.nomeCompleto}, ${m.registro}`} width="830" height="560" style="height:520px;object-position:center 20%" />
+      {temVideo && <video src="/video/institucional-web.mp4" poster="/img/video-poster.jpg" controls preload="none" style="width:100%;aspect-ratio:16/9;border-radius:20px;background:#231F1F" aria-label="Vídeo institucional com a Dra. Ludmilla Nery"></video>}
+      {temVideo && <span class="small muted">A Dra. Ludmilla apresenta a clínica no vídeo institucional (1min20).</span>}
+    </div>
+    <div class="stack gap-32">
+      <div class="stack gap-12"><span class="eyebrow">{m.funcao}</span><h1 class="h1">{m.nomeCompleto}</h1><p class="lead">{m.funcao.split(' · ')[0]} · {m.registro}{m.rqe ? ` · ${m.rqe}` : ''}</p></div>
+      <div class="bg-cream grid g2" style="border-radius:24px;padding:28px 32px;gap:20px">
+        <div class="stack gap-8"><Icon name="clock" class="c" /><strong style="color:var(--ink-900)">Dias e horários</strong><span style="font-size:15px">Consulte os dias de atendimento com a recepção.</span></div>
+        <div class="stack gap-8"><Icon name="card" /><strong style="color:var(--ink-900)">Atende</strong><span style="font-size:15px">{m.publico} · Medplan, Humana Saúde, Camed e particular</span></div>
+      </div>
+      <div><a class="btn btn-p" href={wa(msg)} data-evento="click_whatsapp"><Icon name="chat" size={20} stroke={2} />Agendar com {m.nome}</a></div>
+      <div class="stack gap-12"><h2 class="h3" style="font-size:28px">O que atende</h2><ul class="checks">{m.atende.map((a) => <li><Icon name="check" />{a}</li>)}</ul></div>
+      {exs.length > 0 && <div class="stack gap-12"><h2 class="h3" style="font-size:28px">Exames feitos aqui</h2><div class="row gap-8" style="flex-wrap:wrap">{exs.map((x) => <a class="chip" href={`/exames/${x.slug}`}>{x.nome}</a>)}</div></div>}
+      {esp && <a class="link-arrow" href={`/especialidades/${esp.slug}`}>Ver a página de {esp.nome} →</a>}
+    </div>
+  </section>
+  <CtaBand titulo={`Quer marcar com ${m.nome}?`} texto="Mande uma mensagem pelo WhatsApp. A recepção confirma o dia, o horário e o que levar." botao="Agendar pelo WhatsApp" href={wa(msg)} />
+</Base>

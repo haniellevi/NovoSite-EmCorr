@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { site, wa } from '../data/site';
+const pilares = [['clock', 'Tempo para ouvir', 'A consulta começa pela sua história.'], ['check', 'Próximo passo claro', 'Você sai sabendo o exame, o preparo e o retorno.'], ['lock', 'Sigilo', 'O que você conta fica com a equipe que atende você.'], ['pin', 'Perto de casa', 'Especialista e exame sem sair de Corrente.']];
+const galeria = [['/img/recepcao-ludmilla.jpg', 'Recepção'], ['/img/consultorio-ludmilla.jpg', 'Consultórios'], ['/img/tomografo.jpg', 'Sala de tomografia'], ['/img/microscopio.jpg', 'Laboratório'], ['/img/equipe-odonto.jpg', 'Odontologia'], ['/img/sala-espera.jpg', 'Sala de espera']];
+---
+<Base title="Sobre a EmCORR: centro clínico em Corrente desde 2020" description="A EmCORR atende em Corrente-PI desde 2020: 14 profissionais, consulta, dentista, laboratório e tomografia no mesmo endereço. Veja a estrutura e a equipe." nav="Sobre">
+  <section style="position:relative;margin:24px 40px 0;min-height:560px;border-radius:32px;overflow:hidden" class="sobre-hero">
+    <img src="/img/aerea-full.jpg" alt="Vista aérea da EmCORR, na Av. Getúlio Vargas, em Corrente-PI" width="1210" height="560" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgb(35 31 31 / .82) 0%,rgb(35 31 31 / .45) 55%,rgb(35 31 31 / .1) 100%)"></div>
+    <div class="stack gap-20" style="position:relative;padding:120px 64px;max-width:720px;color:#fff">
+      <span class="eyebrow" style="color:var(--rose-50)">Desde {site.fundacao} · {site.endereco.rua}</span>
+      <h1 class="h1" style="color:#fff">Sobre a EmCORR, centro clínico em Corrente</h1>
+      <p style="font-size:19px;line-height:1.6;color:#F6E9E9">Aqui você faz consulta médica, vai ao dentista e faz exames no mesmo endereço, no centro da cidade.</p>
+    </div>
+  </section>
+  <section class="wrap section-sm grid g4 stats" style="border-bottom:1px solid var(--sand-200)">
+    <div class="stat"><b>{site.fundacao}</b><span>ano de abertura</span></div>
+    <div class="stat"><b>{site.numeros.atendimentos}</b><span>atendimentos registrados</span></div>
+    <div class="stat"><b>{site.numeros.profissionais}</b><span>profissionais</span></div>
+    <div class="stat"><b>{site.numeros.exames}</b><span>exames no mesmo prédio</span></div>
+  </section>
+  <section class="wrap section split" style="grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)">
+    <video src="/video/institucional-web.mp4" poster="/img/video-poster.jpg" controls preload="none" style="width:100%;aspect-ratio:16/9;border-radius:28px;background:#231F1F" aria-label="Vídeo institucional da EmCORR"></video>
+    <div class="stack gap-16">
+      <span class="eyebrow">Como a clínica começou</span>
+      <h2 class="h2">A clínica <em>por quem a fundou</em></h2>
+      <p>A EmCORR abriu em {site.fundacao} para reunir em Corrente consulta, dentista e exame, que antes pediam viagem. Hoje são {site.numeros.profissionais} profissionais e {site.numeros.atendimentos} atendimentos registrados.</p>
+      <div class="row gap-12"><img src="/img/p-ludmilla.png" alt="" width="52" height="52" style="width:52px;height:52px;border-radius:999px;object-fit:cover" /><span class="small" style="line-height:1.4"><strong style="color:var(--ink-900)">{site.rt.nome}</strong><br />Diretora médica · {site.rt.registro} · {site.rt.rqe}</span></div>
+    </div>
+  </section>
+  <section class="bg-cream wrap section stack gap-32">
+    <div class="stack gap-12" style="max-width:760px"><span class="eyebrow">Por que a EmCORR existe</span><h2 class="h2">Resolver o máximo num lugar só, <em>para ninguém precisar viajar</em></h2></div>
+    <div class="grid g4" style="gap:18px">{pilares.map(([i, t, d]) => <div class="stack gap-12" style="padding:28px;border-radius:24px;background:#fff"><span class="ic"><Icon name={i} /></span><strong class="h3" style="font-size:20px">{t}</strong><span style="font-size:15px">{d}</span></div>)}</div>
+  </section>
+  <section class="wrap section stack gap-32">
+    <div class="split" style="align-items:end"><div class="stack gap-12"><span class="eyebrow">O que tem no prédio</span><h2 class="h2">Por dentro <em>da EmCORR</em></h2></div><p>Consultórios médicos e odontológicos, coleta de laboratório, tomografia (GE ACT Revolution), raio-X, ultrassom, mamografia e exames do coração, do ouvido e da respiração.</p></div>
+    <div class="grid g3" style="gap:18px">{galeria.map(([s, c]) => <figure style="margin:0" class="stack gap-8"><img src={s} alt={`${c} da EmCORR`} width="830" height="560" loading="lazy" style="width:100%;height:280px;object-fit:cover;border-radius:22px" /><figcaption class="small muted">{c}</figcaption></figure>)}</div>
+  </section>
+  <section id="acessibilidade" class="wrap grid g2" style="padding-bottom:88px">
+    <div class="box stack gap-12"><span class="eyebrow" style="color:var(--ink-500)">A equipe</span><strong class="h3">{site.numeros.profissionais} profissionais, com o registro do conselho ao lado do nome</strong><a class="link-arrow" href="/corpo-clinico">Ver os profissionais →</a></div>
+    <div class="box stack gap-12"><span class="eyebrow" style="color:var(--ink-500)">Responsável técnica</span><strong class="h3">{site.rt.nome}</strong><span style="font-size:15px">{site.rt.registro} · {site.rt.rqe}</span></div>
+  </section>
+  <CtaBand titulo="Av. Getúlio Vargas, 471, Centro de Corrente" texto="Veja no mapa como chegar ou fale com a recepção pelo WhatsApp." botao="Agendar pelo WhatsApp" href={wa()} />
+</Base>
+<style>@media (max-width:760px){ .sobre-hero{ margin:12px 12px 0 !important; } .sobre-hero > div:last-child{ padding:64px 20px !important; } }</style>
