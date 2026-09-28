@@ -70,10 +70,11 @@ const conv = [...site.convenios];
     </div>
   </section>
 
-  <section class="wrap" style="padding-top:32px;padding-bottom:24px">
+  <section class="wrap stack gap-24" style="padding-top:56px;padding-bottom:64px">
+    <h2 class="h3" style="font-size:24px">O que você precisa hoje?</h2>
     <div class="grid g5">
       {atalhos.map((a) => (
-        <a class="card row gap-16" href={a.h} style="padding:20px;box-shadow:none;border:1px solid var(--sand-200)">
+        <a class="card row gap-16" href={a.h} style="padding:20px">
           <span class="ic" style="width:48px;height:48px"><Icon name={a.i} /></span>
           <span class="stack"><strong style="font-weight:600;color:var(--ink-900)">{a.t}</strong><span class="small muted">{a.s}</span></span>
         </a>
@@ -81,9 +82,9 @@ const conv = [...site.convenios];
     </div>
   </section>
 
-  <section class="section-sm stack gap-32" style="border-bottom:1px solid var(--sand-200)">
-    <div class="wrap row gap-24">
-      <span class="eyebrow muted hide-mobile" style="color:var(--ink-500);flex-shrink:0">Convênios aceitos</span>
+  <section class="bg-cream section-sm conv-band">
+    <div class="wrap row gap-32">
+      <span class="stack conv-title" style="gap:6px"><span class="eyebrow">Convênios aceitos</span><strong>Use o seu plano<br class="hide-mobile"> ou venha particular</strong></span>
       <div class="marquee" id="convenios">
         <div class="marquee-track">
           {[0, 1, 2, 3].map((n) => conv.map((c) => <img src={c.logo} alt={n === 0 ? c.nome : ''} aria-hidden={n === 0 ? undefined : 'true'} width="150" height="60" loading="lazy" />).concat(<span class="chip" aria-hidden={n === 0 ? undefined : 'true'}>Particular</span>))}
@@ -91,11 +92,14 @@ const conv = [...site.convenios];
       </div>
       <button class="icon-btn" style="border:1.5px solid var(--sand-200);background:#fff" type="button" data-pause="convenios" data-label="carrossel de convênios" aria-label="Pausar carrossel de convênios" aria-pressed="false"><Icon name="pause" size={14} fill /></button>
     </div>
+  </section>
+
+  <section class="stats-band">
     <div class="wrap grid g4 stats" style="align-items:end">
       <div class="stat"><b>{site.fundacao}</b><span>ano de abertura, na Av. Getúlio Vargas</span></div>
       <div class="stat"><b>{site.numeros.atendimentos}</b><span>atendimentos registrados</span></div>
       <div class="stat"><b>{site.numeros.profissionais}</b><span>profissionais no mesmo endereço</span></div>
-      <a class="link-arrow" href="/convenios">Ver convênios e o que levar →</a>
+      <a class="btn btn-w" href="/convenios">Ver convênios e o que levar</a>
     </div>
   </section>
 

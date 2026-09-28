@@ -124,6 +124,14 @@ a.card:hover img { transform: scale(1.03); }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* Faixa vermelha e bandas */
+.conv-band .conv-title { flex-shrink: 0; }
+.conv-band .conv-title strong { font: 600 20px/1.3 Poppins; color: var(--ink-900); }
+.conv-band .chip { background: #fff; border-color: #fff; }
+.conv-band .icon-btn { border-color: #D9CFC6 !important; }
+.stats-band { background: var(--wine-900); padding: 56px 0; }
+.stats-band .stat::before { background: var(--rose-50); }
+.stats-band .stat b { color: #fff; font-size: 44px; }
+.stats-band .stat span { color: #F6E9E9; font-size: 15px; }
 .band { background: var(--red-700); color: #fff; border-radius: var(--radius-band); padding: 72px 64px; }
 .band h2, .band h3 { color: #fff; }
 .band p { color: #FFF4F4; }
@@ -211,6 +219,8 @@ fieldset { border: 0; margin: 0; padding: 0; }
   .mobile-bar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: #fff; border-top: 1px solid var(--sand-200); box-shadow: 0 -6px 20px rgb(35 31 31 / .08); }
   .mobile-bar .btn { min-height: 52px; padding: 0 12px; }
   .mobile-bar .btn-p { flex: 7; } .mobile-bar .btn-s { flex: 3; }
+  .conv-band .row { flex-wrap: wrap; } .conv-band .conv-title { width: 100%; } .conv-band .conv-title strong { font-size: 18px; }
+  .stats-band { padding: 40px 0; } .stats-band .stat b { font-size: 32px; }
   .marquee-track { gap: 32px; } .marquee-track img { height: 36px; }
   .stat b { font-size: 32px; }
   .hide-mobile { display: none !important; }
