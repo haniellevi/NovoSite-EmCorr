@@ -11,7 +11,7 @@ interface Props {
   image?: string;
   jsonld?: object[];
 }
-const { title, description, nav = '', waMsg, image = '/img/aerea-full.jpg', jsonld = [] } = Astro.props;
+const { title, description, nav = '', waMsg, image = '/img/clinica/aerea.jpg', jsonld = [] } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 // Enquanto o site novo roda na URL de teste, não indexa (evita competir com o site atual).
 const indexar = import.meta.env.PUBLIC_INDEXAR === 'true';
@@ -27,7 +27,7 @@ const clinic = {
   name: site.nome,
   url: 'https://emcorr.com.br',
   logo: 'https://emcorr.com.br/img/logo.png',
-  image: 'https://emcorr.com.br/img/aerea-full.jpg',
+  image: 'https://emcorr.com.br/img/clinica/aerea.jpg',
   telephone: '+55 89 99933-1133',
   email: site.email,
   foundingDate: String(site.fundacao),

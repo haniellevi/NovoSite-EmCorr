@@ -23,8 +23,9 @@ const ld = [
   { '@context': 'https://schema.org', '@type': 'MedicalWebPage', name: e.h1, about: { '@type': 'MedicalSpecialty', name: e.nome }, provider: { '@id': 'https://emcorr.com.br/#clinica' } },
   ...(faqs.length ? [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.p, acceptedAnswer: { '@type': 'Answer', text: f.r } })) }] : []),
 ];
-const imagens: Record<string, string> = { cardiologia: '/img/consultorio-ludmilla.jpg', odontologia: '/img/dentista.jpg', ortodontia: '/img/equipe-odonto.jpg', odontopediatria: '/img/fase-dentes.jpg', pediatria: '/img/fase-criancas2.jpg', psicologia: '/img/fase-mente.jpg', psiquiatria: '/img/medico-consultorio.jpg', otorrinolaringologia: '/img/corredor.jpg', neurologia: '/img/tomografo.jpg', ortopedia: '/img/tomografia-3d.jpg' };
-const foto = imagens[e.slug] ?? '/img/medico-consultorio.jpg';
+// Cada foto mostra a cena certa da especialidade (ver docs/IMAGENS-MAPA.md). Sem foto própria: consultório vazio.
+const imagens: Record<string, string> = { cardiologia: '/img/clinica/ludmilla-consulta.jpg', odontologia: '/img/clinica/odonto-atendimento.jpg', ortodontia: '/img/clinica/ortodontia-paciente.jpg', odontopediatria: '/img/fase-dentes.jpg', pediatria: '/img/clinica/pediatria-consulta.jpg', psicologia: '/img/fase-mente.jpg', psiquiatria: '/img/fase-mente.jpg', neurologia: '/img/clinica/tomografo.jpg', ortopedia: '/img/clinica/ortopedia-usg.jpg' };
+const foto = imagens[e.slug] ?? '/img/clinica/consultorio-vazio.jpg';
 ---
 <Base title={e.seo_title} description={e.seo_description} nav="Especialidades" waMsg={msg} jsonld={ld}>
   <Crumbs items={[['Início', '/'], ['Especialidades', '/especialidades'], [e.nome]]} />

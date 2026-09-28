@@ -48,7 +48,7 @@ export const equipe = [
   {
     slug: 'dra-ludmilla-nery', nome: 'Dra. Ludmilla Nery', nomeCompleto: 'Dra. Ludmilla Nery Custódio',
     funcao: 'Cardiologista · diretora médica', especialidade: 'cardiologia', especialidades: ['cardiologia'], registro: 'CRM-PI 5888', rqe: 'RQE 2142',
-    foto: '/img/p-ludmilla.png', fotoGrande: '/img/ludmilla-close.jpg', area: 'Coração', publico: 'Adultos e idosos',
+    foto: '/img/p-ludmilla.png', fotoGrande: '/img/clinica/ludmilla-close.jpg', area: 'Coração', publico: 'Adultos e idosos',
     atende: ['Pressão alta', 'Palpitação e cansaço ao subir escada', 'Avaliação antes de cirurgia (risco cirúrgico)', 'Acompanhamento de quem já tem doença do coração'],
     exames: ['eletrocardiograma', 'ecocardiograma', 'holter-24-horas', 'mapa-24-horas', 'doppler-de-carotidas'],
   },
