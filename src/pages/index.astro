@@ -12,11 +12,11 @@ const atalhos = [
   { t: 'Como chegar', s: site.endereco.rua, i: 'pin', h: site.mapsUrl },
 ];
 const fases = [
-  { t: 'Crianças', d: 'Consulta, dentista e os testes do recém-nascido no mesmo endereço.', it: 'Pediatria · Odontopediatria · Fonoaudiologia · Testes do pezinho, da orelhinha e da linguinha', c: 'Ver atendimento infantil', h: '/especialidades/pediatria', img: '/img/fase-criancas2.jpg' },
-  { t: 'Adultos', d: 'Consulta com especialista e o exame pedido feito no mesmo prédio.', it: 'Cardiologia · Endocrinologia · Neurologia · Otorrino · Cirurgia geral', c: 'Ver especialidades', h: '/especialidades', img: '/img/fase-adultos.jpg' },
-  { t: 'Mulheres', d: 'Mamografia e ultrassom, inclusive o morfológico da gestação, sem viajar.', it: 'Mamografia · Ultrassonografia · Ultrassom morfológico', c: 'Ver exames', h: '/exames/mamografia', img: '/img/fase-mulheres.jpg' },
-  { t: 'Dentes', d: 'Avaliação, aparelho e implante, com raio-X panorâmico e tomografia odontológica no local.', it: 'Odontologia · Ortodontia · Odontopediatria', c: 'Ver odontologia', h: '/especialidades/odontologia', img: '/img/fase-dentes.jpg' },
-  { t: 'Corpo e mente', d: 'Conversa em sala reservada, sob sigilo profissional.', it: 'Psicologia · Psiquiatria · Nutrição · Fisioterapia', c: 'Ver atendimentos', h: '/especialidades/psicologia', img: '/img/fase-mente.jpg' },
+  { t: 'Crianças', d: 'Consulta, dentista e os testes do recém-nascido no mesmo endereço.', it: 'Pediatria · Odontopediatria · Fonoaudiologia · Testes do pezinho, da orelhinha e da linguinha', c: 'Ver atendimento infantil', h: '/especialidades/pediatria', img: '/img/grupos/criancas.jpg' },
+  { t: 'Adultos', d: 'Consulta com especialista e o exame pedido feito no mesmo prédio.', it: 'Cardiologia · Endocrinologia · Neurologia · Otorrino · Cirurgia geral', c: 'Ver especialidades', h: '/especialidades', img: '/img/grupos/adultos.jpg' },
+  { t: 'Mulheres', d: 'Mamografia e ultrassom, inclusive o morfológico da gestação, sem viajar.', it: 'Mamografia · Ultrassonografia · Ultrassom morfológico', c: 'Ver exames', h: '/exames/mamografia', img: '/img/grupos/mulheres.jpg' },
+  { t: 'Dentes', d: 'Avaliação, aparelho e implante, com raio-X panorâmico e tomografia odontológica no local.', it: 'Odontologia · Ortodontia · Odontopediatria', c: 'Ver odontologia', h: '/especialidades/odontologia', img: '/img/grupos/dentes.jpg' },
+  { t: 'Corpo e mente', d: 'Conversa em sala reservada, sob sigilo profissional.', it: 'Psicologia · Psiquiatria · Nutrição · Fisioterapia', c: 'Ver atendimentos', h: '/especialidades/psicologia', img: '/img/grupos/mente.jpg' },
 ];
 const exames = [
   { t: 'Exames de sangue', d: 'Veja se precisa de jejum antes de vir.', h: '/exames/exames-laboratoriais' },
@@ -115,7 +115,7 @@ const conv = [...site.convenios];
     <div class="grid g5">
       {fases.map((f) => (
         <a class="card stack" href={f.h}>
-          <img src={f.img} alt="" width="600" height="400" loading="lazy" style="width:100%;height:190px;object-fit:cover" />
+          <img src={f.img} alt="" width="800" height="600" loading="lazy" style="width:100%;height:190px;object-fit:cover" />
           <div class="stack gap-8" style="padding:22px;flex-grow:1">
             <strong class="h3" style="font-size:21px">{f.t}</strong>
             <span style="font-size:15px;line-height:1.55">{f.d}</span>

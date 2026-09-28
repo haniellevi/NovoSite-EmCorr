@@ -49,3 +49,12 @@ Fonte: vídeo institucional (79 s), revisado segundo a segundo. Todas as fotos d
 - Nenhuma foto de profissional aparece em especialidade que não é dele.
 - Especialidade sem cena própria no vídeo usa o consultório vazio ou foto ilustrativa das fases da vida.
 - A sessão de fotos deve cobrir o que falta: otorrino, endocrinologia, nutrição, psicologia, fisioterapia, fono e odontopediatria.
+
+## Cards "Para quem você está marcando?" (`public/img/grupos/`)
+| Card | Foto | Origem |
+|---|---|---|
+| Crianças | Médico atendendo mãe e filha | vídeo 0:36 (pediatria-consulta) |
+| Adultos | Coleta de sangue | vídeo 0:45 (coleta) |
+| Mulheres | Exame de ultrassom | vídeo 0:23 (ultrassom, recortado sem o logo) |
+| Dentes | Dentista atendendo na cadeira | vídeo 0:24 (odonto-atendimento) |
+| Corpo e mente | Conversa em sala de psicologia | Unsplash, ilustrativa (sem cena no vídeo) |
