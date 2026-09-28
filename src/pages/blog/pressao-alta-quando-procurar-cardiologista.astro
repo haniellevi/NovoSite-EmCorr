@@ -1,0 +1,47 @@
+---
+import Article from '../../components/Article.astro';
+const faqs = [
+  { p: 'Qual pressão é considerada alta?', r: 'Em geral, fala-se em hipertensão quando as medidas ficam em 14 por 9 (140/90 mmHg) ou mais em ocasiões diferentes. Quem define o diagnóstico é o médico, a partir de várias medidas.' },
+  { p: 'Dor de cabeça indica pressão alta?', r: 'Nem sempre. A maioria das pessoas com pressão alta não sente nada. Por isso a medida regular é mais confiável que os sintomas.' },
+  { p: 'O que é o MAPA?', r: 'É um aparelho que mede a pressão várias vezes ao longo de 24 horas, durante a sua rotina. Ajuda a confirmar o diagnóstico e a ajustar o tratamento.' },
+  { p: 'Preciso de encaminhamento para a cardiologista?', r: 'Não. Você pode marcar a consulta direto pelo WhatsApp da EmCORR.' },
+];
+---
+<Article slug="pressao-alta-quando-procurar-cardiologista" msg="Olá, quero marcar uma consulta com a cardiologista na EmCORR por causa da pressão." servico={{ label: 'Ver a página de cardiologia', href: '/especialidades/cardiologia' }} toc={[['silenciosa', 'Por que ela passa despercebida'], ['numeros', 'Os números que pedem atenção'], ['quando', 'Quando marcar a consulta'], ['exames', 'Exames que ajudam'], ['urgencia', 'Quando é urgência'], ['perguntas', 'Perguntas frequentes']]} faqs={faqs}>
+  <div class="quick" style="font-size:18px;color:var(--ink-900)"><strong>Resposta rápida:</strong> se a sua pressão aparece em 14 por 9 ou mais em medidas diferentes, marque uma consulta com o cardiologista. Não espere sentir alguma coisa: na maioria das pessoas, a pressão alta não dá sintoma.</div>
+
+  <h2 id="silenciosa">Por que a pressão alta passa despercebida</h2>
+  <p>A hipertensão costuma não doer. Muita gente descobre por acaso, numa farmácia, num posto de saúde ou numa consulta por outro motivo. Enquanto isso, a pressão elevada força o coração, os rins e os vasos do cérebro. Com o tempo, aumenta o risco de infarto, AVC e doença nos rins. Tratar cedo reduz esse risco.</p>
+
+  <h2 id="numeros">Os números que pedem atenção</h2>
+  <table>
+    <thead><tr><th>Medida (mmHg)</th><th>O que costuma significar</th></tr></thead>
+    <tbody>
+      <tr><td>Até 12 por 8</td><td>Pressão dentro do esperado</td></tr>
+      <tr><td>Entre 12 por 8 e 14 por 9</td><td>Faixa de atenção: vale medir com frequência e conversar com o médico</td></tr>
+      <tr><td>14 por 9 ou mais, em medidas diferentes</td><td>Pode ser hipertensão: procure consulta</td></tr>
+    </tbody>
+  </table>
+  <p>Uma medida isolada não fecha diagnóstico. Nervosismo, café, cigarro e esforço físico recente mudam o resultado. Por isso o médico considera várias medidas, em dias diferentes.</p>
+
+  <h2 id="quando">Quando marcar a consulta</h2>
+  <ul class="lista">
+    <li>quando as medidas ficam em 14 por 9 ou mais;</li>
+    <li>quando a pressão varia muito de um dia para o outro;</li>
+    <li>se você tem diabetes, colesterol alto, doença nos rins ou excesso de peso;</li>
+    <li>se pai, mãe ou irmãos tiveram infarto ou AVC cedo;</li>
+    <li>se já usa remédio e a pressão continua alta.</li>
+  </ul>
+
+  <h2 id="exames">Exames que ajudam na investigação</h2>
+  <p>Depois de conversar e examinar, o cardiologista pode pedir alguns exames. Na EmCORR, todos são feitos no mesmo prédio da consulta:</p>
+  <ul class="lista">
+    <li><a href="/exames/eletrocardiograma">Eletrocardiograma</a>, que registra o ritmo do coração;</li>
+    <li><a href="/exames/mapa-24-horas">MAPA 24 horas</a>, que mede a pressão durante a sua rotina;</li>
+    <li><a href="/exames/ecocardiograma">Ecocardiograma</a>, que mostra se o coração já sofreu com a pressão alta;</li>
+    <li><a href="/exames/exames-laboratoriais">Exames de sangue e urina</a>, como glicose, colesterol, creatinina e potássio.</li>
+  </ul>
+
+  <h2 id="urgencia">Quando é urgência</h2>
+  <div class="alert"><strong style="color:var(--red-700)">Atenção:</strong><span>pressão muito alta junto com dor no peito, falta de ar, fraqueza num lado do corpo, fala enrolada ou visão turva pede atendimento de emergência. Ligue 192 ou vá ao pronto-socorro.</span></div>
+</Article>

@@ -1,0 +1,34 @@
+---
+import Article from '../../components/Article.astro';
+const faqs = [
+  { p: 'O teste do pezinho dói?', r: 'O bebê sente uma picada rápida no calcanhar. Amamentar ou colocar o bebê no colo durante a coleta ajuda a acalmar.' },
+  { p: 'Perdi o prazo do teste do pezinho. E agora?', r: 'Faça o quanto antes. Mesmo depois do prazo ideal, o exame continua útil. Fale com a recepção para agendar a coleta.' },
+  { p: 'O teste da orelhinha precisa de preparo?', r: 'Não. O ideal é que o bebê esteja dormindo ou tranquilo, porque o exame é mais rápido assim.' },
+  { p: 'Os três testes podem ser feitos no mesmo dia?', r: 'Muitas vezes, sim. A recepção organiza os horários para você não precisar voltar várias vezes.' },
+];
+---
+<Article slug="teste-do-pezinho-orelhinha-linguinha" msg="Olá, quero agendar os testes do recém-nascido (pezinho, orelhinha e linguinha) na EmCORR." servico={{ label: 'Ver o teste do pezinho', href: '/exames/teste-do-pezinho' }} toc={[['resumo', 'Resumo dos três testes'], ['pezinho', 'Teste do pezinho'], ['orelhinha', 'Teste da orelhinha'], ['linguinha', 'Teste da linguinha'], ['marcar', 'Como fazer em Corrente'], ['perguntas', 'Perguntas frequentes']]} faqs={faqs}>
+  <div class="quick" style="font-size:18px;color:var(--ink-900)"><strong>Resposta rápida:</strong> o teste do pezinho deve ser feito entre o 3º e o 5º dia de vida. O da orelhinha, no primeiro mês, de preferência nos primeiros dias. O da linguinha, logo após o nascimento. Na EmCORR, os três ficam no mesmo endereço.</div>
+
+  <h2 id="resumo">Resumo dos três testes</h2>
+  <table>
+    <thead><tr><th>Teste</th><th>O que avalia</th><th>Quando fazer</th></tr></thead>
+    <tbody>
+      <tr><td>Pezinho</td><td>Doenças metabólicas, genéticas e hormonais</td><td>Do 3º ao 5º dia de vida</td></tr>
+      <tr><td>Orelhinha</td><td>Audição do bebê</td><td>No primeiro mês, de preferência nos primeiros dias</td></tr>
+      <tr><td>Linguinha</td><td>O freio da língua ("língua presa")</td><td>Logo após o nascimento</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="pezinho">Teste do pezinho</h2>
+  <p>São algumas gotas de sangue tiradas do calcanhar do bebê e colocadas num papel especial. O exame procura doenças que não aparecem ao nascer, como o hipotireoidismo congênito, a fenilcetonúria e a anemia falciforme. Quando descobertas cedo, muitas delas têm tratamento que evita problemas no desenvolvimento. Por isso o prazo importa: entre o 3º e o 5º dia de vida.</p>
+
+  <h2 id="orelhinha">Teste da orelhinha</h2>
+  <p>Também chamado de triagem auditiva neonatal. Um fone pequeno é colocado na orelha do bebê e registra a resposta do ouvido a sons suaves. Não dói e leva poucos minutos. Se o resultado não for claro, o exame é repetido ou o bebê segue para uma avaliação mais completa. Descobrir cedo uma perda auditiva faz diferença no desenvolvimento da fala.</p>
+
+  <h2 id="linguinha">Teste da linguinha</h2>
+  <p>O profissional observa a língua do bebê e o freio que fica embaixo dela. Quando esse freio é curto, a língua se movimenta pouco e o bebê pode ter dificuldade para mamar. O exame é rápido e feito com o bebê no colo. Se houver alteração, a família recebe a orientação sobre o próximo passo.</p>
+
+  <h2 id="marcar">Como fazer os testes em Corrente</h2>
+  <p>Mande uma mensagem pelo WhatsApp da EmCORR com a data de nascimento do bebê. A recepção organiza os horários, de preferência no mesmo dia, e explica o que levar. Na mesma clínica, a família também encontra pediatria e fonoaudiologia para o acompanhamento.</p>
+</Article>

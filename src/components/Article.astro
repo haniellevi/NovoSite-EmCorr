@@ -1,0 +1,58 @@
+---
+import Base from '../layouts/Base.astro';
+import Crumbs from './Crumbs.astro';
+import Faq from './Faq.astro';
+import { posts } from '../data/posts';
+import { wa } from '../data/site';
+
+interface Props {
+  slug: string;
+  msg: string;
+  servico: { label: string; href: string };
+  toc: [string, string][];
+  faqs?: { p: string; r: string }[];
+}
+const { slug, msg, servico, toc, faqs = [] } = Astro.props;
+const p = posts.find((x) => x.slug === slug)!;
+const data = new Date(p.data + 'T12:00:00').toLocaleDateString('pt-BR');
+const outros = posts.filter((x) => x.slug !== slug).slice(0, 3);
+const ld = [
+  { '@context': 'https://schema.org', '@type': 'Article', headline: p.titulo, description: p.resumo, datePublished: p.data, dateModified: p.data, author: { '@type': 'Organization', name: 'EmCORR – Centro Clínico' }, publisher: { '@id': 'https://emcorr.com.br/#clinica' }, image: new URL(p.capa, Astro.site).toString(), keywords: p.palavras },
+  ...(faqs.length ? [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.p, acceptedAnswer: { '@type': 'Answer', text: f.r } })) }] : []),
+];
+---
+<Base title={`${p.titulo} | EmCORR`} description={p.resumo} nav="Blog" waMsg={msg} image={p.capa} jsonld={ld}>
+  <Crumbs items={[['Início', '/'], ['Blog', '/blog'], [p.categoria]]} />
+  <section class="wrap stack gap-16" style="padding-top:36px;padding-bottom:40px;max-width:1000px">
+    <span class="eyebrow">{p.categoria}</span>
+    <h1 class="h1" style="font-size:clamp(32px,4vw,48px)">{p.titulo}</h1>
+    <p class="lead">{p.resumo}</p>
+    <span class="small muted">{p.autor} · atualizado em {data} · {p.leitura} de leitura</span>
+  </section>
+  <section class="wrap"><img class="photo" src={p.capa} alt={p.capaAlt} width="1210" height="560" style="height:clamp(240px,34vw,440px)" /></section>
+  <section class="wrap split artigo" style="grid-template-columns:220px minmax(0,1fr) 300px;align-items:start;gap:48px;padding-top:56px;padding-bottom:88px">
+    <nav aria-label="Neste artigo" class="stack gap-12 hide-mobile" style="position:sticky;top:110px;border-left:2px solid var(--sand-200);padding-left:20px;font-size:15px">
+      <strong style="color:var(--ink-900);font-size:14px">Neste artigo</strong>
+      {toc.map(([id, label]) => <a href={`#${id}`}>{label}</a>)}
+    </nav>
+    <article class="stack gap-24 prose artigo-corpo">
+      <slot />
+      {faqs.length > 0 && <div id="perguntas" class="stack gap-12"><h2 class="h3" style="font-size:28px">Perguntas frequentes</h2><Faq items={faqs} onWhite /></div>}
+      <p class="small muted" style="border-top:1px solid var(--sand-200);padding-top:20px">Este conteúdo é educativo e não substitui a consulta. Se tiver sintomas, procure um profissional de saúde. Em emergência, ligue 192.</p>
+      <div class="row gap-12" style="flex-wrap:wrap"><a class="btn btn-s btn-sm" href={`https://wa.me/?text=${encodeURIComponent(`${p.titulo} https://emcorr.com.br/blog/${p.slug}`)}`}>Enviar pelo WhatsApp</a></div>
+    </article>
+    <aside class="stack gap-16" style="position:sticky;top:110px">
+      <div class="card stack gap-12" style="padding:26px"><strong class="h3" style="font-size:19px">Quer marcar?</strong><span style="font-size:15px">Fale com a recepção pelo WhatsApp. Ela confirma o horário, o preparo e o convênio.</span><a class="btn btn-p btn-sm" href={wa(msg)} data-evento="click_whatsapp">Agendar pelo WhatsApp</a><a class="link-arrow" href={servico.href} style="font-size:15px">{servico.label} →</a></div>
+      <div class="stack gap-8" style="padding:8px 4px"><span class="eyebrow" style="color:var(--ink-500)">Leia também</span>{outros.map((o) => <a href={`/blog/${o.slug}`} style="font-weight:500;color:var(--ink-900)">{o.titulo}</a>)}</div>
+    </aside>
+  </section>
+</Base>
+<style>
+  .artigo-corpo :global(h2) { font-size: 28px; line-height: 1.25; margin-top: 12px; scroll-margin-top: 110px; }
+  .artigo-corpo :global(p), .artigo-corpo :global(li) { font-size: 18px; line-height: 1.7; }
+  .artigo-corpo :global(ul.lista) { padding-left: 22px; display: flex; flex-direction: column; gap: 8px; }
+  .artigo-corpo :global(table) { border-collapse: collapse; width: 100%; font-size: 16px; }
+  .artigo-corpo :global(th), .artigo-corpo :global(td) { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--sand-200); vertical-align: top; }
+  .artigo-corpo :global(th) { background: var(--cream-50); color: var(--ink-900); font-weight: 600; }
+  @media (max-width: 1100px) { .artigo { grid-template-columns: minmax(0,1fr) !important; } .artigo aside { position: static !important; } }
+</style>

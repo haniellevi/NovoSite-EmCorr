@@ -1,0 +1,42 @@
+---
+import Article from '../../components/Article.astro';
+const faqs = [
+  { p: 'Ecocardiograma precisa de jejum?', r: 'O ecocardiograma comum, feito pelo peito, não precisa de jejum. Você pode comer normalmente e tomar seus remédios.' },
+  { p: 'Quanto tempo demora?', r: 'Entre 20 e 40 minutos, na maioria dos casos.' },
+  { p: 'Precisa de pedido médico?', r: 'Sim. O exame é feito a partir do pedido do médico, que também vai interpretar o laudo na consulta de retorno.' },
+  { p: 'Ecocardiograma e eletrocardiograma são a mesma coisa?', r: 'Não. O eletrocardiograma registra a atividade elétrica do coração em poucos minutos. O ecocardiograma mostra a imagem do coração em movimento: tamanho das cavidades, válvulas e força do bombeamento.' },
+];
+---
+<Article slug="ecocardiograma-em-corrente-pi" msg="Olá, tenho pedido médico e quero agendar ecocardiograma na EmCORR." servico={{ label: 'Ver a página do ecocardiograma', href: '/exames/ecocardiograma' }} toc={[['o-que-e', 'O que é'], ['quando', 'Quando o médico pede'], ['como', 'Como é o exame'], ['preparo', 'Preparo'], ['marcar', 'Como marcar em Corrente'], ['perguntas', 'Perguntas frequentes']]} faqs={faqs}>
+  <div class="quick" style="font-size:18px;color:var(--ink-900)"><strong>Resposta rápida:</strong> o ecocardiograma é o ultrassom do coração. Não dói, não usa radiação e, na versão comum feita pelo peito, não pede jejum. Na EmCORR, você faz o exame no mesmo prédio da consulta de cardiologia.</div>
+
+  <h2 id="o-que-e">O que é o ecocardiograma</h2>
+  <p>É um exame de imagem que usa ondas de ultrassom para mostrar o coração batendo. Com ele, o médico vê o tamanho das cavidades, a espessura das paredes, o funcionamento das válvulas e a força com que o coração bombeia o sangue. O doppler colorido, feito no mesmo exame, mostra a direção e a velocidade do sangue dentro do coração.</p>
+
+  <h2 id="quando">Quando o médico pede</h2>
+  <p>O ecocardiograma costuma entrar na investigação quando há:</p>
+  <ul class="lista">
+    <li>sopro no coração percebido na consulta;</li>
+    <li>falta de ar ou cansaço em esforços que antes eram fáceis;</li>
+    <li>inchaço nas pernas sem causa clara;</li>
+    <li>pressão alta de longa data, para avaliar se o coração foi afetado;</li>
+    <li>palpitações, junto com outros exames como o Holter;</li>
+    <li>acompanhamento de doença do coração já conhecida ou avaliação antes de cirurgia.</li>
+  </ul>
+
+  <h2 id="como">Como é o exame</h2>
+  <p>Você tira a roupa da cintura para cima e deita de lado, virado para a esquerda. O médico passa um gel no peito e desliza o transdutor, um aparelho parecido com um mouse, por alguns pontos do tórax. Pode pedir que você prenda a respiração por alguns segundos. A sala fica com pouca luz para melhorar a imagem na tela. O exame leva de 20 a 40 minutos e você volta à rotina logo depois.</p>
+
+  <h2 id="preparo">Preparo</h2>
+  <p>Para o ecocardiograma transtorácico, que é o mais pedido, não há preparo especial:</p>
+  <ul class="lista">
+    <li>pode comer e beber normalmente;</li>
+    <li>tome os remédios de uso contínuo no horário de sempre;</li>
+    <li>leve o pedido médico, documento com foto e carteirinha do convênio;</li>
+    <li>se tiver exames do coração anteriores, leve também. Eles ajudam na comparação.</li>
+  </ul>
+  <p>Outros tipos de ecocardiograma, como o de estresse ou o transesofágico, têm preparo próprio. A recepção confirma qual é o seu quando você marca.</p>
+
+  <h2 id="marcar">Como marcar em Corrente</h2>
+  <p>Mande uma foto do pedido médico pelo WhatsApp da EmCORR. A recepção confere o tipo de exame, informa o horário e confirma a cobertura do seu convênio. A EmCORR atende Medplan, Humana Saúde, Camed e particular. Se você ainda não tem o pedido, dá para marcar antes a consulta com a cardiologista, que atende no mesmo endereço.</p>
+</Article>

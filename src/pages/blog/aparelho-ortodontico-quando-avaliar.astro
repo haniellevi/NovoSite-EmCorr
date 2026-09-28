@@ -1,0 +1,40 @@
+---
+import Article from '../../components/Article.astro';
+const faqs = [
+  { p: 'Adulto pode usar aparelho?', r: 'Pode. Não há idade máxima. O que muda é o planejamento, que leva em conta a saúde da gengiva e dos ossos.' },
+  { p: 'O aparelho dói?', r: 'Nos primeiros dias e depois de cada ajuste, os dentes ficam sensíveis. O desconforto costuma passar em poucos dias.' },
+  { p: 'Quanto tempo dura o tratamento?', r: 'Depende do caso. O ortodontista informa a estimativa depois da avaliação e dos exames.' },
+  { p: 'Preciso de exames antes de começar?', r: 'Sim. Radiografias e, em alguns casos, tomografia odontológica ajudam a planejar. Na EmCORR, esses exames são feitos no mesmo endereço.' },
+];
+---
+<Article slug="aparelho-ortodontico-quando-avaliar" msg="Olá, quero marcar uma avaliação ortodôntica na EmCORR." servico={{ label: 'Ver a página de ortodontia', href: '/especialidades/ortodontia' }} toc={[['idade', 'Com que idade avaliar'], ['sinais', 'Sinais que pedem avaliação'], ['avaliacao', 'Como é a primeira consulta'], ['adultos', 'Aparelho em adultos'], ['cuidados', 'Cuidados durante o tratamento'], ['perguntas', 'Perguntas frequentes']]} faqs={faqs}>
+  <div class="quick" style="font-size:18px;color:var(--ink-900)"><strong>Resposta rápida:</strong> muitos ortodontistas recomendam a primeira avaliação por volta dos 7 anos, quando os dentes permanentes começam a nascer. Isso não quer dizer que a criança vai usar aparelho já. Adultos também podem tratar em qualquer idade.</div>
+
+  <h2 id="idade">Com que idade avaliar</h2>
+  <p>Por volta dos 7 anos, o ortodontista já consegue ver como a mordida está se formando e se há espaço para os dentes permanentes. Alguns problemas são mais simples de corrigir enquanto os ossos da face ainda crescem. Em muitos casos, a recomendação é só acompanhar e voltar depois.</p>
+
+  <h2 id="sinais">Sinais que pedem avaliação</h2>
+  <ul class="lista">
+    <li>dentes tortos, encavalados ou muito separados;</li>
+    <li>dentes de cima que não encostam nos de baixo, ou que fecham por dentro deles;</li>
+    <li>queixo muito para frente ou muito para trás;</li>
+    <li>dificuldade para morder ou mastigar;</li>
+    <li>respiração pela boca e ronco frequente;</li>
+    <li>uso prolongado de chupeta ou hábito de chupar o dedo;</li>
+    <li>dente de leite perdido muito cedo ou que demora demais a cair.</li>
+  </ul>
+
+  <h2 id="avaliacao">Como é a primeira consulta</h2>
+  <p>O ortodontista conversa sobre a queixa, examina a boca e a mordida e pode pedir exames de imagem, como o <a href="/exames/raio-x-panoramico">raio-X panorâmico</a> e a <a href="/exames/tomografia-odontologica">tomografia odontológica</a>. Com os exames em mãos, ele explica se há indicação de tratamento, qual tipo de aparelho faz sentido e quanto tempo o tratamento deve levar no seu caso.</p>
+
+  <h2 id="adultos">Aparelho em adultos</h2>
+  <p>Não existe idade limite. Adultos procuram o ortodontista por estética, para facilitar a limpeza dos dentes ou antes de colocar implantes e próteses. O planejamento considera a saúde da gengiva e dos ossos, por isso a avaliação inicial é mais detalhada.</p>
+
+  <h2 id="cuidados">Cuidados durante o tratamento</h2>
+  <ul class="lista">
+    <li>escove depois das refeições e use fio dental com passa-fio;</li>
+    <li>evite alimentos muito duros ou grudentos, que soltam peças do aparelho;</li>
+    <li>vá às manutenções nas datas marcadas;</li>
+    <li>depois de tirar o aparelho, use a contenção como o dentista orientar.</li>
+  </ul>
+</Article>

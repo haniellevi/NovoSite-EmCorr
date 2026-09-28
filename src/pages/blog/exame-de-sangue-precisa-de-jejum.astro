@@ -1,0 +1,45 @@
+---
+import Article from '../../components/Article.astro';
+const faqs = [
+  { p: 'Posso beber água durante o jejum?', r: 'Sim. Água pura não quebra o jejum. Evite café, chá, sucos e chiclete.' },
+  { p: 'Tomo remédio todo dia. Paro antes do exame?', r: 'Não pare por conta própria. Na maioria dos casos, o remédio de uso contínuo é mantido. Confirme com o médico que pediu o exame ou com a recepção.' },
+  { p: 'Jejum de 12 horas é sempre melhor?', r: 'Não. Jejum mais longo que o pedido pode alterar alguns resultados. Siga o tempo indicado para o seu exame.' },
+  { p: 'Onde vejo o resultado?', r: 'Os exames de laboratório da EmCORR ficam no portal do laboratório. Veja o passo a passo na página Resultados.' },
+];
+---
+<Article slug="exame-de-sangue-precisa-de-jejum" msg="Olá, quero agendar exames de sangue na EmCORR e confirmar o preparo." servico={{ label: 'Ver exames laboratoriais', href: '/exames/exames-laboratoriais' }} toc={[['tabela', 'Jejum por exame'], ['antes', 'Na véspera da coleta'], ['dia', 'No dia'], ['urina', 'Exame de urina'], ['perguntas', 'Perguntas frequentes']]} faqs={faqs}>
+  <div class="quick" style="font-size:18px;color:var(--ink-900)"><strong>Resposta rápida:</strong> nem todo exame de sangue pede jejum. Hemograma e TSH, em geral, não pedem. Glicose pede 8 horas. Colesterol depende da orientação do médico. Na dúvida, mande o pedido pelo WhatsApp e a recepção confirma o preparo de cada exame.</div>
+
+  <h2 id="tabela">Jejum por exame</h2>
+  <table>
+    <thead><tr><th>Exame</th><th>Jejum</th></tr></thead>
+    <tbody>
+      <tr><td>Hemograma</td><td>Em geral, não precisa</td></tr>
+      <tr><td>Glicose (glicemia de jejum)</td><td>8 horas</td></tr>
+      <tr><td>Curva glicêmica e insulina</td><td>Jejum, conforme o pedido. O exame leva algumas horas</td></tr>
+      <tr><td>Colesterol e triglicerídeos</td><td>Pode ser feito sem jejum, a menos que o médico peça</td></tr>
+      <tr><td>TSH e T4 (tireoide)</td><td>Em geral, não precisa</td></tr>
+      <tr><td>Creatinina, ureia, potássio</td><td>Em geral, não precisa</td></tr>
+    </tbody>
+  </table>
+  <p>As regras podem mudar conforme o laboratório e o motivo do exame. Se o pedido tiver vários exames, vale o jejum do exame que pede mais tempo.</p>
+
+  <h2 id="antes">Na véspera da coleta</h2>
+  <ul class="lista">
+    <li>jante normalmente, sem exagero de gordura;</li>
+    <li>evite bebida alcoólica nas 72 horas anteriores;</li>
+    <li>evite exercício intenso no dia anterior;</li>
+    <li>durma bem: noites mal dormidas também alteram alguns resultados.</li>
+  </ul>
+
+  <h2 id="dia">No dia</h2>
+  <ul class="lista">
+    <li>beba água, se quiser: ela não quebra o jejum;</li>
+    <li>tome os remédios de uso contínuo, salvo orientação diferente;</li>
+    <li>leve o pedido médico, documento com foto e carteirinha do convênio;</li>
+    <li>avise na coleta se usa anticoagulante ou se já passou mal ao tirar sangue.</li>
+  </ul>
+
+  <h2 id="urina">E o exame de urina?</h2>
+  <p>Na maioria dos casos, usa-se a primeira urina da manhã. Lave a região íntima com água e sabão, despreze o primeiro jato e colha o jato do meio no frasco entregue pelo laboratório. Leve a amostra no mesmo dia, de preferência em até duas horas.</p>
+</Article>
